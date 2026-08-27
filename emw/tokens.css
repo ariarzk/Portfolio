@@ -1,0 +1,103 @@
+/* EMW Design System — token layers, verbatim from the master document.
+   Raw palette (theme-independent), then light, then dark. */
+/* ============================================================
+   EMW DESIGN SYSTEM 2026
+   Single-file master document.
+   Rev 02 — All sections 00–15 issued
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   TOKENS — RAW PALETTE (theme-independent)
+   ------------------------------------------------------------ */
+:root{
+  --emw-black:#111111;
+  --emw-charcoal:#242424;
+  --emw-paper:#F5F3ED;
+  --emw-white:#FAF9F5;
+  --emw-walnut:#49382C;
+  --emw-oxblood:#641F28;
+  --emw-slate:#59616A;
+  --emw-blue:#243A4A;
+  --emw-brass:#A48755;
+  /* derived for accessibility — see EMW-01 */
+  --emw-brass-ink:#7E6539;
+  --emw-slate-raised:#9AA1A9;
+
+  /* TYPOGRAPHY */
+  --font-sans:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --font-serif:'Newsreader','Iowan Old Style','Times New Roman',Times,serif;
+  --font-mono:'IBM Plex Mono','SFMono-Regular',Menlo,Consolas,monospace;
+
+  /* SPACING — editorial rhythm, not a linear ramp */
+  --space-1:4px;  --space-2:8px;   --space-3:16px;  --space-4:24px;
+  --space-5:40px; --space-6:64px;  --space-7:104px; --space-8:168px;
+
+  /* RADIUS — capped at 4px. Institutions do not have rounded corners. */
+  --radius-none:0px; --radius-sm:2px; --radius-md:4px;
+
+  /* BORDER */
+  --border-hairline:1px; --border-thin:1px; --border-strong:2px;
+
+  /* MOTION */
+  --motion-fast:160ms; --motion-standard:320ms; --motion-deliberate:640ms;
+  --ease-emw:cubic-bezier(.2,.6,.2,1);
+
+  /* LAYOUT */
+  --page-max:1440px;
+  --rail-w:216px;
+  --gutter:24px;
+  --margin-x:var(--space-6);
+}
+
+/* ------------------------------------------------------------
+   TOKENS — LIGHT (default)
+   ------------------------------------------------------------ */
+:root,[data-theme="light"]{
+  --surface-base:#F5F3ED;
+  --surface-raised:#FAF9F5;
+  --surface-sunken:#EBE7DC;
+  --surface-inverse:#111111;
+  --ink-primary:#111111;
+  --ink-secondary:#3B3B3B;
+  --ink-tertiary:#59616A;
+  --ink-inverse:#FAF9F5;
+  --accent:#A48755;
+  --accent-ink:#7E6539;
+  --rule-hairline:rgba(17,17,17,.14);
+  --rule-thin:rgba(17,17,17,.28);
+  --rule-strong:rgba(17,17,17,.72);
+  --sem-success:#3D5A45;
+  --sem-warning:#8A6A2F;
+  --sem-critical:#641F28;
+  --sem-info:#243A4A;
+  --chart-grid:rgba(17,17,17,.10);
+  --focus:#243A4A;
+}
+
+/* ------------------------------------------------------------
+   TOKENS — DARK. The terminal palette.
+   Navy ground, gold accent, ivory ink — the working surface of
+   the Manufacturing Financial Statement, adopted as the house
+   dark theme. Read at night, on a screen, for hours.
+   ------------------------------------------------------------ */
+[data-theme="dark"]{
+  --surface-base:#0B1117;
+  --surface-raised:#111827;
+  --surface-sunken:#16202E;
+  --surface-inverse:#F5F0E6;
+  --ink-primary:#F5F0E6;
+  --ink-secondary:#C9CFD6;
+  --ink-tertiary:#A8A29E;
+  --ink-inverse:#0B1117;
+  --accent:#B08D57;
+  --accent-ink:#B08D57;
+  --rule-hairline:#23303F;
+  --rule-thin:#2C3A4A;
+  --rule-strong:#5E6B7A;
+  --sem-success:#6FA287;
+  --sem-warning:#D99A26;
+  --sem-critical:#D2755C;
+  --sem-info:#5B8DAE;
+  --chart-grid:#23303F;
+  --focus:#B08D57;
+}

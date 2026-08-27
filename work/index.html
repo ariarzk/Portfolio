@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--
+  WORK — portfolio, page 2 of 3.
+  Manufacture Terminal leads the page: it is the system the other three
+  engagements produced, and the only one a visitor can open and use. The
+  three that led to it follow as index rows.
+
+  Every row is a teaser only — number, category, title, one-line thesis,
+  one or two evidence points, a visual. The narrative lives on the case
+  page; keep it that way or the two become redundant.
+
+  Case pages: ./<slug>/index.html
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selected Work — Aria Rizki Ermawan</title>
+<meta name="description" content="Four engagements — investment governance, a major capacity investment, a quality turnaround, and the manufacturing decision intelligence platform built on top of them.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../emw/tokens.css">
+<link rel="stylesheet" href="../emw/ds-bundle.css">
+<link rel="stylesheet" href="../emw/portfolio.css">
+<script>
+  // Resolve the stored theme before first paint.
+  try {
+    var t = localStorage.getItem('emw-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+<script src="../emw/portfolio.js" defer></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="shell topbar-in">
+    <div class="topbar-brand">
+      <a class="topbar-wordmark" href="../index.html"><span class="wm-full">Aria Rizki Ermawan</span><span class="wm-short">ARE</span></a>
+      <span class="topbar-sub">Selected work</span>
+    </div>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="../index.html">Profile</a>
+        <a href="./index.html" aria-current="page">Work</a>
+        <a href="../skills/index.html">Skills</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle aria-label="Switch theme" title="Theme">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"></circle>
+          <path d="M8 1 A7 7 0 0 0 8 15 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+      <a class="nav-cta" href="../contact/index.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+
+  <header class="case-hero" id="work">
+    <div class="rule">
+      <span class="rule-mark">BT<span class="sep">/</span>Selected work<span class="sep">/</span>2026</span>
+    </div>
+
+    <h1 class="t-display">Selected Work</h1>
+    <p class="hero-thesis">Four engagements, <em>one line of work</em>.</p>
+
+    <div class="sh-grid work-intro">
+      <p class="t-body">
+        The rules for allocating capital, the first major investment made
+        under them, the quality problem taken back under control, and the
+        management system that now connects plant performance to the
+        decision. Each opens as a full case study.
+      </p>
+      <p class="t-caption">
+        Governance → Investment → Operations → Decision intelligence.
+      </p>
+    </div>
+  </header>
+
+
+  <!-- ── Featured work ──────────────────────────────────────────
+       The Terminal leads this page: it is the system the other three
+       engagements produced, and the only one a visitor can open and use. -->
+  <section class="feature reveal" id="bt-04">
+    <div class="rule">
+      <span class="rule-mark">Featured<span class="sep">/</span>BT-04<span class="sep">/</span>Decision intelligence</span>
+    </div>
+
+    <div class="feature-grid">
+      <div>
+        <h2 class="t-h1 feature-title">
+          <a href="./manufacture-terminal/index.html">Manufacture Terminal</a>
+        </h2>
+        <p class="hero-thesis feature-thesis">Decision intelligence <em>for manufacturing</em>.</p>
+        <p class="t-body feature-lead">
+          The management system the first three engagements argued for —
+          performance, cost and cause in one view, on a surface the plant
+          actually decides with.
+        </p>
+      </div>
+
+      <div class="feature-side">
+        <div class="feature-metrics">
+          <div class="metric">
+            <p class="metric-v">10</p>
+            <p class="t-label metric-l">Live modules</p>
+          </div>
+          <div class="metric">
+            <p class="metric-v">6</p>
+            <p class="t-label metric-l">Domains</p>
+          </div>
+          <div class="metric">
+            <p class="metric-v">11</p>
+            <p class="t-label metric-l">Report charts</p>
+          </div>
+          <div class="metric">
+            <p class="metric-v">0</p>
+            <p class="t-label metric-l">Servers required</p>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="https://manufactureterminal.com/" target="_blank" rel="noopener">Explore the live system<span class="arw">↗</span></a>
+          <a class="btn btn--tertiary" href="./manufacture-terminal/index.html">Read case study<span class="arw">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="ev ev--auto feature-visual">
+      <div class="ev-frame">
+        <div class="diag">
+          <div class="diag-chips">
+            <span class="chip">Executive KPI</span>
+            <span class="chip">Market Int.</span>
+            <span class="chip">Prod. Capability</span>
+            <span class="chip">Quality Int.</span>
+            <span class="chip">Mfg Finance</span>
+            <span class="chip">Procurement</span>
+            <span class="chip">Forecasting</span>
+            <span class="chip">Overtime</span>
+            <span class="chip">OEN</span>
+            <span class="chip">Plant Map</span>
+          </div>
+
+          <div class="diag-join" aria-hidden="true"></div>
+
+          <div class="diag-box diag-box--accent">
+            <p class="diag-title">Control tower · synthesis</p>
+            <p class="diag-items">
+              <span>Performance</span><span>Trends</span><span>Variance</span><span>Drivers</span><span>Alerts</span><span>Reporting</span>
+            </p>
+          </div>
+
+          <div class="diag-arrow" aria-hidden="true"></div>
+
+          <div class="diag-box diag-centre">
+            <p class="diag-title">Executive report · .docx</p>
+            <p class="diag-sub">any period · 12 sections · methodology + limits</p>
+          </div>
+
+          <div class="diag-arrow" aria-hidden="true"></div>
+
+          <div class="diag-box diag-box--accent diag-centre">
+            <p class="diag-title">Management · decision</p>
+            <p class="diag-sub">an owner, and a next date</p>
+          </div>
+        </div>
+      </div>
+      <figcaption class="ev-cap">
+        <span class="t-label">System</span>
+        <span class="t-caption">Ten modules feed one synthesis layer; the synthesis produces the publication; the publication ends in a decision that carries an owner and a date.</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section reveal">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">BT<span class="sep">/</span>01 — 03<span class="sep">/</span>The work behind it</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">BT-01 → BT-03</span>
+          <h2 class="t-h1">The work behind it</h2>
+        </div>
+        <p class="t-lead">
+          Three engagements the Terminal was built to serve — the rules for
+          allocating capital, the first major investment made under them, and
+          the quality problem taken back under control.
+        </p>
+      </div>
+    </header>
+
+      <div class="idx">
+
+        <!-- BT-01 -->
+        <article class="idx-row reveal">
+          <div class="idx-main">
+            <div class="idx-mark">
+              <span class="idx-n">BT-01</span>
+              <span class="idx-cat">Governance</span>
+            </div>
+            <h3 class="t-h2 idx-title">
+              <a href="./investment-framework/index.html">Investment Framework &amp; Governance</a>
+            </h3>
+            <p class="t-body idx-thesis">
+              A standard way to evaluate, approve and review capital — where none existed.
+            </p>
+            <div class="idx-points">
+              <ul class="idx-note">
+                <li>End-to-end lifecycle, from opportunity to post-investment review.</li>
+                <li>Company-wide standard for evaluation and approval.</li>
+              </ul>
+            </div>
+            <div class="idx-cta cta-row">
+              <a class="btn btn--tertiary" href="./investment-framework/index.html">Read case study<span class="arw">→</span></a>
+            </div>
+          </div>
+          <div class="idx-teaser">
+            <figure class="case-visual">
+              <div class="cv-head">
+                <p class="t-label">Investment lifecycle</p>
+                <span class="t-meta">Framework</span>
+              </div>
+              <div class="cv-body">
+                <ol class="stagestrip">
+                  <li><span class="s-n">01</span><span class="s-t">Opportunity</span></li>
+                  <li><span class="s-n">02</span><span class="s-t">Evaluation</span></li>
+                  <li><span class="s-n">03</span><span class="s-t">Approval</span></li>
+                  <li><span class="s-n">04</span><span class="s-t">Financing</span></li>
+                  <li><span class="s-n">05</span><span class="s-t">Execution</span></li>
+                  <li><span class="s-n">06</span><span class="s-t">Post-investment review</span></li>
+                </ol>
+              </div>
+            </figure>
+          </div>
+        </article>
+
+        <!-- BT-02 -->
+        <article class="idx-row reveal">
+          <div class="idx-main">
+            <div class="idx-mark">
+              <span class="idx-n">BT-02</span>
+              <span class="idx-cat">Investment</span>
+            </div>
+            <h3 class="t-h2 idx-title">
+              <a href="./blowing-machine/index.html">Blowing Machine Investment</a>
+            </h3>
+            <p class="t-body idx-thesis">
+              The framework's first major test — capacity for growth, justified and financed.
+            </p>
+            <div class="idx-points">
+              <div class="metric">
+                <p class="metric-v">≈4×</p>
+                <p class="t-label metric-l">Capacity</p>
+              </div>
+              <div class="metric">
+                <p class="metric-v">≈220<small>M</small></p>
+                <p class="t-label metric-l">IDR / month</p>
+              </div>
+            </div>
+            <div class="idx-cta cta-row">
+              <a class="btn btn--tertiary" href="./blowing-machine/index.html">Read case study<span class="arw">→</span></a>
+            </div>
+          </div>
+          <div class="idx-teaser">
+            <figure class="case-visual">
+              <div class="cv-head">
+                <p class="t-label">Identified monthly savings</p>
+                <span class="t-meta">≈ IDR 220M</span>
+              </div>
+              <div class="cv-body">
+                <div class="propbar" role="img" aria-label="Packaging material approximately 150 million rupiah per month; fixed labour approximately 70 million rupiah per month.">
+                  <i style="flex:150;background:var(--accent)"></i>
+                  <i style="flex:70;background:var(--ink-tertiary)"></i>
+                </div>
+                <div class="proplegend">
+                  <span><b style="background:var(--accent)"></b>Packaging ≈IDR 150M</span>
+                  <span><b style="background:var(--ink-tertiary)"></b>Fixed labour ≈IDR 70M</span>
+                </div>
+              </div>
+              <figcaption class="t-caption">Combined, from the two stated components.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- BT-03 -->
+        <article class="idx-row reveal">
+          <div class="idx-main">
+            <div class="idx-mark">
+              <span class="idx-n">BT-03</span>
+              <span class="idx-cat">Operations</span>
+            </div>
+            <h3 class="t-h2 idx-title">
+              <a href="./quality-improvement/index.html">Quality Improvement Project</a>
+            </h3>
+            <p class="t-body idx-thesis">
+              A quality problem taken from customer complaint to controlled process — without missing sales.
+            </p>
+            <div class="idx-points">
+              <div class="metric">
+                <p class="metric-v metric-v--range">35.0 → 13.0</p>
+                <p class="t-label metric-l">PPM, like-for-like</p>
+              </div>
+              <div class="metric">
+                <p class="metric-v metric-v--range">2.46% → 0.98%</p>
+                <p class="t-label metric-l">COPQ / revenue</p>
+              </div>
+            </div>
+            <div class="idx-cta cta-row">
+              <a class="btn btn--tertiary" href="./quality-improvement/index.html">Read case study<span class="arw">→</span></a>
+            </div>
+          </div>
+          <div class="idx-teaser">
+            <figure class="case-visual">
+              <div class="cv-head">
+                <p class="t-label">Before → after</p>
+                <span class="t-meta">As reported</span>
+              </div>
+              <div class="cv-body">
+                <div class="ba">
+                  <div class="ba-group">
+                    <p class="t-label">Complaint rate · Jan–Jul</p>
+                    <div class="ba-row">
+                      <span class="ba-k">2025</span>
+                      <span class="ba-track"><i class="ba-fill" style="width:100%"></i></span>
+                      <span class="ba-v">35.0 PPM</span>
+                    </div>
+                    <div class="ba-row">
+                      <span class="ba-k">2026</span>
+                      <span class="ba-track"><i class="ba-fill ba-fill--after" style="width:37.1%"></i></span>
+                      <span class="ba-v">13.0 PPM</span>
+                    </div>
+                  </div>
+                  <div class="ba-group">
+                    <p class="t-label">COPQ / revenue · Jan–Jul</p>
+                    <div class="ba-row">
+                      <span class="ba-k">2025</span>
+                      <span class="ba-track"><i class="ba-fill" style="width:100%"></i></span>
+                      <span class="ba-v">2.46%</span>
+                    </div>
+                    <div class="ba-row">
+                      <span class="ba-k">2026</span>
+                      <span class="ba-track"><i class="ba-fill ba-fill--after" style="width:40%"></i></span>
+                      <span class="ba-v">0.98%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </article>
+
+
+      </div>
+  </section>
+
+  <nav class="pager" aria-label="Portfolio">
+    <a class="pager-prev" href="../index.html">
+      <span class="t-label">← Back</span>
+      <span class="pager-t">Welcome</span>
+    </a>
+    <a class="pager-index" href="../contact/index.html">Get in touch</a>
+    <a class="pager-next" href="./investment-framework/index.html">
+      <span class="t-label">Start reading →</span>
+      <span class="pager-t">Investment Framework &amp; Governance</span>
+    </a>
+  </nav>
+
+  <footer class="colophon" id="contact">
+    <div class="rule">
+      <span class="rule-mark">ARE<span class="sep">/</span>Contact<span class="sep">/</span>2026</span>
+    </div>
+    <p class="cl">Manufacturing systems, <em>built to be decided with</em>.</p>
+    <div class="cta-row">
+      <a class="btn btn--tertiary" href="mailto:ariarzk@gmail.com">ariarzk@gmail.com<span class="arw">→</span></a>
+      <a class="btn btn--tertiary" href="https://www.linkedin.com/in/ariarzk/" target="_blank" rel="noopener">LinkedIn<span class="arw">↗</span></a>
+    </div>
+    <div class="colophon-meta">
+      <span class="t-meta">Aria Rizki Ermawan · Portfolio</span>
+      <span class="t-meta">Built on the EMW design system · Rev 02</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

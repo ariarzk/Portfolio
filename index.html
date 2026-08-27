@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--
+  ARIA RIZKI ERMAWAN — portfolio, page 1 of 3 (Profile).
+  Built on the EMW design system (Rev 02).
+
+  No build step. Open index.html directly, or drop the folder on any
+  static host. Every page shares four files:
+    emw/tokens.css     — token layer, copied verbatim from the EMW ds-bundle
+    emw/ds-bundle.css  — base, type scale and component CSS, verbatim
+    emw/portfolio.css  — connective tissue for this site
+    emw/portfolio.js   — theme toggle and the editorial reveal
+  To take a design-system update, re-copy the first two from
+  "EMW Capital/Brand/ds-bundle". Nothing in them is patched here.
+
+  The token layer resolves off data-theme on <html>. Remove that
+  attribute and the page renders unstyled.
+
+  STRUCTURE
+    index.html                 page 1 — Profile: who, what, track record,
+                               then the handover to the work
+    work/index.html            page 2 — Work: the Terminal featured, then the
+                               three engagements behind it
+    contact/index.html         page 3 — Contact
+    work/<slug>/index.html     one dedicated case study each
+
+  The masthead is the same on every page: Profile · Work · theme · Contact.
+  Its markup is duplicated per page (no build step) — change one, change all.
+
+  Everything on this page is drawn from the CV
+  ("CV - Aria R Ermawan.pdf"), rewritten for the page — not pasted.
+  Nothing here is invented; keep it that way when editing.
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aria Rizki Ermawan — Manufacturing · Capital · Governance</title>
+<meta name="description" content="Aria Rizki Ermawan — VP Manufacture at PT Toyamilindo. Manufacturing P&amp;L, capital allocation and corporate governance, with selected work in investment governance, capacity investment, quality and decision intelligence.">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./emw/tokens.css">
+<link rel="stylesheet" href="./emw/ds-bundle.css">
+<link rel="stylesheet" href="./emw/portfolio.css">
+<script>
+  // Resolve the stored theme before first paint.
+  try {
+    var t = localStorage.getItem('emw-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+<script src="./emw/portfolio.js" defer></script>
+</head>
+<body>
+
+<!-- ── Masthead bar ─────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="shell topbar-in">
+    <div class="topbar-brand">
+      <span class="topbar-wordmark"><span class="wm-full">Aria Rizki Ermawan</span><span class="wm-short">ARE</span></span>
+      <span class="topbar-sub">MFG · Capital · Governance</span>
+    </div>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="./index.html" aria-current="page">Profile</a>
+        <a href="./work/index.html">Work</a>
+        <a href="./skills/index.html">Skills</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle aria-label="Switch theme" title="Theme">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"></circle>
+          <path d="M8 1 A7 7 0 0 0 8 15 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+      <a class="nav-cta" href="./contact/index.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-top">
+      <p class="t-label">Portfolio · 2026</p>
+      <p class="t-label">Cirebon · West Java</p>
+    </div>
+
+    <h1 class="t-display">Aria Rizki<br>Ermawan<span class="brass">.</span></h1>
+
+    <div class="hero-line">
+      <p class="hero-tag">Manufacturing P&amp;L, <em>capital allocation</em>, and the governance between them.</p>
+      <p class="t-lead">
+        Finance and operations, run as one job. I build the institutional
+        systems — investment frameworks, quality governance, financial
+        controls — that turn shareholder objectives into outcomes the business
+        can measure.
+      </p>
+    </div>
+
+    <div class="charlist">
+      <span class="chip">Manufacturing P&amp;L</span>
+      <span class="chip">Operating model</span>
+      <span class="chip">Capital allocation</span>
+      <span class="chip">Investment governance</span>
+      <span class="chip">Quality governance</span>
+      <span class="chip">Financial control</span>
+    </div>
+
+    <div class="case-meta">
+      <div>
+        <p class="t-label meta-k">Role</p>
+        <p class="meta-v">VP Manufacture</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Organisation</p>
+        <p class="meta-v">PT Toyamilindo</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Based</p>
+        <p class="meta-v">Cirebon, West Java</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Since</p>
+        <p class="meta-v">October 2023</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 01 · Practice ──────────────────────────────────────── -->
+  <section class="section reveal" id="practice">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">ARE<span class="sep">/</span>01<span class="sep">/</span>Practice</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">01</span>
+          <h2 class="t-h1">Practice</h2>
+        </div>
+        <p class="t-lead">
+          Three lines of work, held together rather than run in sequence — the
+          plant, the capital that funds it, and the controls that keep both
+          honest.
+        </p>
+      </div>
+    </header>
+
+    <div class="grid g-3">
+      <div class="term-panel">
+        <p class="t-label">Operating model</p>
+        <p class="t-body">
+          Manufacturing strategy and operating model: shareholder objectives
+          translated into systems, KPIs and governance frameworks. Structural
+          cost efficiency through automation and workforce redesign, with
+          accountability for operating performance and cost structure.
+        </p>
+      </div>
+      <div class="term-panel">
+        <p class="t-label">Capital allocation</p>
+        <p class="t-body">
+          A company-wide investment policy governing allocation, risk
+          thresholds and return discipline — then the major capital
+          investments evaluated, financed and executed under it, from
+          manufacturing capacity to out-of-city sales expansion.
+        </p>
+      </div>
+      <div class="term-panel">
+        <p class="t-label">Governance and control</p>
+        <p class="t-body">
+          Decision-making and risk governance across production, quality and
+          capital expenditure, with independent QA embedded. Budgeting,
+          forecasting, working capital and long-term planning behind it, and
+          bank financing re-established through rebuilt lender relationships.
+        </p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn--tertiary" href="./skills/index.html">See how these connect — the knowledge map<span class="arw">→</span></a>
+    </div>
+  </section>
+
+  <!-- ── 02 · Track record ──────────────────────────────────── -->
+  <section class="section reveal" id="record">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">ARE<span class="sep">/</span>02<span class="sep">/</span>Track record</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">02</span>
+          <h2 class="t-h1">Track record</h2>
+        </div>
+        <p class="t-lead">
+          Bank credit first, then the corporate finance seat, then the plant
+          itself — the same question approached from three sides: what is this
+          business worth, and what will make it worth more?
+        </p>
+      </div>
+    </header>
+
+    <table class="index-table">
+      <thead>
+        <tr>
+          <th scope="col">Period</th>
+          <th scope="col">Role</th>
+          <th scope="col">Organisation</th>
+          <th scope="col">Base</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2023 —</td>
+          <td>VP Manufacture</td>
+          <td>PT Toyamilindo</td>
+          <td><span class="state">Cirebon</span></td>
+        </tr>
+        <tr>
+          <td>2022 — 23</td>
+          <td>Corporate Development &amp; Finance</td>
+          <td>PT Toyamilindo</td>
+          <td><span class="state">Cirebon</span></td>
+        </tr>
+        <tr>
+          <td>2020 — 22</td>
+          <td>Commercial Credit Analyst</td>
+          <td>Bank BJB</td>
+          <td><span class="state">Bandung</span></td>
+        </tr>
+        <tr>
+          <td>2019</td>
+          <td>Project Officer</td>
+          <td>Salam Ganesha (BPUDL ITB)</td>
+          <td><span class="state">Jakarta</span></td>
+        </tr>
+        <tr>
+          <td>2019</td>
+          <td>Ecosystem Expansion Intern</td>
+          <td>GoPay</td>
+          <td><span class="state">Bandung</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="grid g-2 record-notes">
+      <div class="term-panel">
+        <p class="t-label">Education</p>
+        <p class="t-body">
+          Institut Teknologi Bandung — Bachelor of Management, 2015–2018.
+        </p>
+      </div>
+      <div class="term-panel">
+        <p class="t-label">Beyond the P&amp;L</p>
+        <p class="t-body">
+          Clean Water Access Initiative, 2017 — profits from a completed
+          business project allocated to an infrastructure CSR initiative,
+          delivering clean water through a community well in Cikalong Wetan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 03 · Handover to the work ──────────────────────────── -->
+  <section class="section reveal" id="work">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">BT<span class="sep">/</span>03<span class="sep">/</span>Selected work</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">03</span>
+          <h2 class="t-h1">Selected Work</h2>
+        </div>
+        <p class="t-lead">
+          Four engagements on one line of work — the rules for allocating
+          capital, the first major investment made under them, the quality
+          problem taken back under control, and the management system that now
+          connects plant performance to the decision.
+        </p>
+      </div>
+    </header>
+
+    <ul class="prlist worklist">
+      <li>
+        <span class="n">BT-01</span>
+        <a class="p" href="./work/investment-framework/index.html">Investment Framework &amp; Governance</a>
+      </li>
+      <li>
+        <span class="n">BT-02</span>
+        <a class="p" href="./work/blowing-machine/index.html">Blowing Machine Investment</a>
+      </li>
+      <li>
+        <span class="n">BT-03</span>
+        <a class="p" href="./work/quality-improvement/index.html">Quality Improvement Project</a>
+      </li>
+      <li>
+        <span class="n">BT-04</span>
+        <a class="p" href="./work/manufacture-terminal/index.html">Manufacture Terminal</a>
+      </li>
+    </ul>
+
+    <div class="cta-row">
+      <a class="btn btn--primary" href="./work/index.html">Open selected work<span class="arw">→</span></a>
+    </div>
+  </section>
+
+  <!-- ── Colophon ───────────────────────────────────────────── -->
+  <footer class="colophon" id="contact">
+    <div class="rule">
+      <span class="rule-mark">ARE<span class="sep">/</span>Contact<span class="sep">/</span>2026</span>
+    </div>
+    <p class="mk">ARE</p>
+    <p class="cl">Manufacturing systems, <em>built to be decided with</em>.</p>
+    <div class="cta-row">
+      <a class="btn btn--tertiary" href="mailto:ariarzk@gmail.com">ariarzk@gmail.com<span class="arw">→</span></a>
+      <a class="btn btn--tertiary" href="https://www.linkedin.com/in/ariarzk/" target="_blank" rel="noopener">LinkedIn<span class="arw">↗</span></a>
+    </div>
+    <div class="colophon-meta">
+      <span class="t-meta">Aria Rizki Ermawan · Portfolio</span>
+      <span class="t-meta">Built on the EMW design system · Rev 02</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

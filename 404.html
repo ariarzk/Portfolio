@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+  404 — served by GitHub Pages for any unknown path.
+  The links resolve to the site root whether this is published as a user
+  site (username.github.io) or a project site (username.github.io/repo/).
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Not found — Aria Rizki Ermawan</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  // Resolve the site root, then point every marked link and stylesheet at it.
+  (function () {
+    var seg = location.pathname.split('/').filter(Boolean);
+    var base = (location.hostname.endsWith('github.io') && seg.length > 1) ? '/' + seg[0] : '';
+    document.documentElement.dataset.base = base;
+    try {
+      var t = localStorage.getItem('emw-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+    // stylesheets are written with the resolved base, before first paint
+    document.write(['tokens', 'ds-bundle', 'portfolio'].map(function (f) {
+      return '<link rel="stylesheet" href="' + base + '/emw/' + f + '.css">';
+    }).join(''));
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('a[data-rel]').forEach(function (el) {
+        el.setAttribute('href', base + el.getAttribute('href'));
+      });
+    });
+  })();
+</script>
+</head>
+<body>
+<div class="shell">
+  <header class="case-hero">
+    <div class="rule">
+      <span class="rule-mark">ARE<span class="sep">/</span>404<span class="sep">/</span>Not found</span>
+    </div>
+    <h1 class="t-h1">This page doesn&rsquo;t exist</h1>
+    <p class="hero-thesis">The link is wrong, or the page has moved.</p>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="/index.html" data-rel>Profile<span class="arw">→</span></a>
+      <a class="btn btn--tertiary" href="/work/index.html" data-rel>Selected work<span class="arw">→</span></a>
+      <a class="btn btn--tertiary" href="/skills/index.html" data-rel>Skills<span class="arw">→</span></a>
+    </div>
+  </header>
+</div>
+</body>
+</html>
