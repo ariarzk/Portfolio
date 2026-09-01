@@ -14,6 +14,7 @@ works; put the folder on any static host and it works there too.
 | `skills/index.html` | Skills & Capabilities — the knowledge graph |
 | `contact/index.html` | Contact |
 | `404.html` | Served by GitHub Pages for unknown paths |
+| `work-dossier/` | Standalone one-file version of the four case studies — not part of the site |
 
 Every link in the site is relative, so it runs correctly at a domain root
 (`username.github.io`) **or** in a subfolder (`username.github.io/repo/`).
@@ -29,6 +30,23 @@ emw/portfolio.js    theme toggle and the editorial reveal, shared by every page
 
 To take a design-system update, re-copy the first two from the EMW
 `ds-bundle`. Nothing in them is modified here, which is what makes that safe.
+
+## The work dossier
+
+`work-dossier/Aria-Rizki-Ermawan-Selected-Work.html` is a single
+self-contained file — styles, script and both screenshots inlined — holding
+the four case studies and nothing else. It opens offline, attaches to an
+email, and prints to a clean PDF (each case starts on a new page, paper
+colours forced). It is not linked from the site.
+
+It is generated, not maintained by hand. After editing any case page:
+
+```bash
+python3 work-dossier/build.py
+```
+
+`template.html` is the shell it fills; edit that to change the dossier's
+cover, contents block or print rules.
 
 ## Editing
 

@@ -46,7 +46,7 @@
       <nav class="topbar-nav">
         <a href="../../index.html">Profile</a>
         <a href="../index.html" aria-current="page">Work</a>
-        <a href="../../skills/index.html">Skills</a>
+        <a href="../../skills/index.html">How I think</a>
       </nav>
       <button type="button" class="theme-btn" data-theme-toggle aria-label="Switch theme" title="Theme">
         <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
@@ -189,9 +189,7 @@
     </figure>
 
     <p class="t-caption case-note">
-      There is no roadmap here, deliberately. The architecture accommodates an
-      eleventh module without changing the first ten; a list of modules that do
-      not exist would say nothing about the system that does.
+      There is no roadmap here, deliberately. An eleventh module needs no change to the first ten, and listing modules that do not exist would say nothing about the system that does.
     </p>
   </section>
 
@@ -205,7 +203,7 @@
         </div>
         <div class="cb-body">
           <p class="t-body">
-            Analysis was never the missing thing. Production, quality, finance,
+            Analysis was not the missing piece. Production, quality, finance,
             procurement and people each produced it — daily, weekly, monthly and
             ad hoc, each in its own file, each complete on its own terms.
           </p>
@@ -214,7 +212,7 @@
             mattered crossed every one of those files: what a unit cost last
             month, why it moved, and what it would take to move it back is a
             finance question, a production question and a quality question at
-            once. No file held it, and no owner did either. By the time the pack
+            once. No file held that question, and no one owned it. By the time the pack
             was assembled, the month it described was over.
           </p>
         </div>
@@ -228,16 +226,14 @@
         <div class="cb-body">
           <p class="t-body">
             Reporting is a record. A decision needs a comparison, a driver and a
-            consequence — and management time was going into building the pack
-            rather than discussing the business it described.
+            consequence — and management time went into building the pack rather than discussing the business.
           </p>
           <p class="t-body">
-            The constraints were as fixed as the problem: no engineering team,
+            The constraints were fixed: no engineering team,
             no platform budget, no server to run one on. Parts of the data
             foundation genuinely do not exist — no downtime or loss-event data,
             no in-process quality data, no bill of materials that reconciles
-            with finance material cost. Anything built here had to be honest
-            about those gaps rather than fill them with plausible numbers.
+            with finance material cost. Anything built here had to state those gaps rather than fill them with plausible numbers.
           </p>
         </div>
       </section>
@@ -250,20 +246,15 @@
         <div class="cb-body">
           <p class="t-body">
             Design around the decision loop rather than around dashboards. Data,
-            performance, diagnosis, decision, action — each stage a question the
-            system has to answer, and each question with a precondition that has
-            to exist before the answer means anything. Most reporting stops at
-            performance. Everything after it is where the work actually is.
+            performance, diagnosis, decision, action — each stage a question the system has to answer, and each question with something that has to exist before it can be answered. Most reporting stops at performance. The work is in the stages after it.
           </p>
           <p class="t-body">
-            Two rules carried the build. Every module is a single self-contained
+            Two rules shaped the build. Every module is a single self-contained
             HTML file with its data embedded, so it can be written by anyone,
-            reviewed by opening it, and published without touching the core. And
-            every number names its source: a figure whose origin cannot be stated
-            is not evidence.
+            reviewed by opening it, and published without touching the core. And every number names its source.
           </p>
           <p class="t-body">
-            That made the platform something the team could extend. A published
+            That made it something the team could extend. A published
             builder brief sets the contract, and one review gate — beta first,
             live after — checks that a module runs clean, carries no data it
             should not, and fits the Terminal before it is published.
@@ -294,7 +285,7 @@
               <li class="loop-step">
                 <span class="loop-n">03 · Diagnosis</span>
                 <span class="loop-q">What drove the change?</span>
-                <span class="loop-p">A decomposition that reconciles — or it is a story, not a diagnosis.</span>
+                <span class="loop-p">A decomposition that reconciles.</span>
               </li>
               <li class="loop-step">
                 <span class="loop-n">04 · Decision</span>
@@ -304,7 +295,7 @@
               <li class="loop-step">
                 <span class="loop-n">05 · Action</span>
                 <span class="loop-q">Who owns it, and by when?</span>
-                <span class="loop-p">An owner and a next date, or the loop does not close.</span>
+                <span class="loop-p">An owner and a next date.</span>
               </li>
             </ol>
             <p class="loop-close">Action feeds the next period&rsquo;s data</p>
@@ -342,9 +333,7 @@
           <p class="t-body">
             Verification is a harness of 46 checks in three groups: browser
             wiring, reconciliation of every headline figure recomputed
-            independently, and coverage of every period type. It earns its keep —
-            it caught water missing from the cost-of-goods composition, where the
-            shares summed to 97% under a total row claiming 100%. A separate leak
+            independently, and coverage of every period type. It caught water missing from the cost-of-goods composition, where the shares summed to 97% under a total claiming 100%. A separate leak
             gate scans everything bound for the public site for values from the
             real dataset before anything ships.
           </p>
@@ -364,14 +353,11 @@
         </div>
         <div class="cb-body">
           <p class="t-body">
-            The plant now has one management surface. The meeting opens the
-            Terminal instead of a pack: the evidence, the driver and the decision
-            in the same place, at the cadence the business moves rather than the
-            cadence the pack could be built.
+            The plant now has one management view. Meetings open the Terminal instead of a pack, so the evidence, the driver and the decision are in the same place — at the cadence the business moves rather than the cadence a pack can be built.
           </p>
           <ul class="case-outcomes">
             <li>Ten modules live across six domains, in daily use behind authentication.</li>
-            <li>The executive publication is generated for any period, not written — and the generator refuses to author a strategic initiative, which prints as a marked blank because a commitment is management&rsquo;s to make.</li>
+            <li>The executive publication is generated for any period, not written — and the generator will not write a strategic initiative; those sections print as marked blanks, because a commitment is management's to make.</li>
             <li>What the system cannot say is stated in the report itself, in every issue: no OEE decomposition, no cost of poor quality, no supplier risk score, no target or owner a source system does not hold.</li>
             <li>The team can add modules against a written brief and one review gate; the eleventh requires no change to the first ten.</li>
             <li>No framework, no build step, no runtime dependency — a stack a non-engineering function can keep running.</li>
@@ -435,7 +421,7 @@
             </div>
             <figcaption class="ev-cap">
               <span class="t-label">Fig. 03</span>
-              <span class="t-caption">The output the loop ends in — a finished document rather than a dashboard to interpret.</span>
+              <span class="t-caption">What the loop ends in: a finished document rather than a dashboard to interpret.</span>
             </figcaption>
           </figure>
         </div>
@@ -447,10 +433,7 @@
     <p class="t-label">The view</p>
     <p class="t-quote">The executive report is generated, not written.</p>
     <p class="t-body">
-      Eleven charts rasterised and a Word package assembled entirely in the
-      browser. No server, no export step, no analyst evening — the board pack is
-      a build artefact of the platform, and the two sections it will not write
-      are the two that belong to management.
+      Eleven charts and a Word package assembled in the browser, with no server and no export step. The two sections it will not write are the two that belong to management.
     </p>
   </div>
 
@@ -535,7 +518,7 @@
     <div class="rule">
       <span class="rule-mark">ARE<span class="sep">/</span>Contact<span class="sep">/</span>2026</span>
     </div>
-    <p class="cl">Manufacturing systems, <em>built to be decided with</em>.</p>
+    <p class="cl">Manufacturing, finance, and the systems <em>that connect them</em>.</p>
     <div class="cta-row">
       <a class="btn btn--tertiary" href="mailto:ariarzk@gmail.com">ariarzk@gmail.com<span class="arw">→</span></a>
     </div>

@@ -53,7 +53,7 @@ window.KNOWLEDGE = (function () {
     { id:'governance',  n:'10', label:'Governance',               x: 195, y: 560, arc:{spread:140, r:100},
       desc:'Who decides what, on what basis, and who answers for it.' },
     { id:'digital',     n:'09', label:'Digital / AI',             x:1175, y: 830, arc:{spread:170, r:105},
-      desc:'Systems that carry the work rather than describe it.' }
+      desc:'Systems that do the work rather than describe it.' }
   ];
 
   const synthesis = [
@@ -84,15 +84,15 @@ window.KNOWLEDGE = (function () {
     ['production','Production','operations','Output against plan, line by line, shift by shift.'],
     ['capacity','Capacity','operations','What the plant can actually run, and what limits it.'],
     ['ppic','PPIC','operations','Planning and inventory control between demand and the line.'],
-    ['maintenance','Maintenance','operations','Keeping capability available rather than repairing failure.'],
+    ['maintenance','Maintenance','operations','Keeping equipment available rather than repairing failure.'],
     ['procurement','Procurement','operations','Input prices, supplier exposure, and when to buy.'],
     ['workforce','Workforce','operations','Manning the process — structure, shifts and overtime.'],
-    ['productivity','Productivity','operations','Output per unit of input, and where it leaks.'],
+    ['productivity','Productivity','operations','Output per unit of input, and where it is lost.'],
 
     ['capex','CAPEX','capital','Capital spent to add, restore or modernise capability.'],
     ['roi','ROI','capital','What the investment returns against what it consumed.'],
     ['irr','IRR','capital','The rate a project earns over its own life.'],
-    ['payback','Payback','capital','How long the business is exposed before it is whole again.'],
+    ['payback','Payback','capital','How long before the investment is repaid.'],
     ['financing','Financing','capital','Structuring the funding, including debt the lender must accept.'],
     ['investment-governance','Investment Governance','capital','The rules a proposal must pass before it becomes a commitment.'],
 
@@ -101,22 +101,22 @@ window.KNOWLEDGE = (function () {
     ['root-cause-analysis','Root Cause Analysis','quality','Finding the mechanism, not the symptom.'],
     ['capa','CAPA','quality','Corrective action, and evidence that it held.'],
     ['process-improvement','Process Improvement','quality','Changing the process so the defect cannot recur.'],
-    ['continuous-improvement','Continuous Improvement','quality','Improvement as a standing habit rather than a project.'],
+    ['continuous-improvement','Continuous Improvement','quality','Improvement as routine rather than as a project.'],
 
     ['kpi-architecture','KPI Architecture','performance','Designing metrics and driver relationships that make performance measurable and actionable.'],
     ['targets','Targets','performance','What good looks like, stated before the period starts.'],
     ['drivers','Drivers','performance','The few variables that actually move the number.'],
     ['variance-analysis','Variance Analysis','performance','The gap between plan and actual, decomposed until it reconciles.'],
     ['forecasting','Forecasting','performance','What the next periods look like, and how wrong the last forecast was.'],
-    ['accountability','Accountability','governance','An owner and a next date, or the loop does not close.'],
+    ['accountability','Accountability','governance','An owner and a next date for every decision.'],
 
     ['business-data','Business Data','data','The operating record: what happened, from the source system.'],
     ['kpi-analysis','KPI Analysis','data','Reading indicators against target, prior period and peer.'],
     ['trend-analysis','Trend Analysis','data','Direction and persistence, separated from noise.'],
     ['driver-analysis','Driver Analysis','data','Attributing a movement to the things that caused it.'],
-    ['visualization','Visualization','data','Showing evidence so the decision is visible in it.'],
+    ['visualization','Visualization','data','Presenting evidence so the decision is clear.'],
 
-    ['insights','Insights','decision-intelligence','The finding that changes what someone does.'],
+    ['insights','Insights','decision-intelligence','A finding that changes what someone does.'],
     ['decision-support','Decision Support','decision-intelligence','Options, constraints and what each one costs.'],
     ['exception-management','Exception Management','decision-intelligence','Managing by what broke the expectation, not by the whole report.'],
     ['action','Action','decision-intelligence','The decision taken, owned and dated.'],

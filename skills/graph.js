@@ -203,7 +203,7 @@
       sub.setAttribute('class', 'kg-sub');
       sub.setAttribute('x', n.x); sub.setAttribute('y', n.y + R.artifact + 42);
       sub.setAttribute('text-anchor', 'middle');
-      sub.textContent = 'the synthesis, built';
+      sub.textContent = 'built from this map';
       g.appendChild(sub);
     }
 
