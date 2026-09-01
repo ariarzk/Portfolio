@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<!--
+  CASE STUDY — BT-03 Quality Improvement Project
+  Aria Rizki Ermawan · portfolio
+
+  WRITTEN — from three sources: the LAPI ITB fact-finding report (water
+  treatment process and facilities assessment, September 2024), the complaint
+  register as held by the Quality Intelligence module, read from January 2025
+  to August 2026, and the plant's COPQ workbook through July 2026.
+
+  REDACTED FOR CONFIDENTIALITY: the assessment team members, the specific
+  product-water parameters found outside threshold, process parameters
+  (filtration ratings, pressures, performance shortfalls) and the alternative
+  raw-water source. LAPI ITB is named with permission as the consultant.
+
+  FIGURES: complaint rates are parts per million of units produced, on the
+  module's own basis. Cost of poor quality is expressed only as a share of
+  revenue — every rupiah value in the workbook is withheld. Like-for-like
+  windows are used because both series are seasonal, and the most recent
+  production months are still accruing.
+
+  Styling comes from the shared EMW stylesheets in /emw — nothing on this page
+  is page-specific CSS. Behaviour (theme, reveal) comes from /emw/portfolio.js.
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quality Improvement Project — Aria Rizki Ermawan</title>
+<meta name="description" content="Case study BT-03 — Quality Improvement Project: a science-based assessment with LAPI ITB, a facility and process rebuild, and a complaint rate walked back to its pre-incident level without missing sales.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../emw/tokens.css">
+<link rel="stylesheet" href="../../emw/ds-bundle.css">
+<link rel="stylesheet" href="../../emw/portfolio.css">
+<script>
+  // Resolve the stored theme before first paint.
+  try {
+    var t = localStorage.getItem('emw-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+<script src="../../emw/portfolio.js" defer></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="shell topbar-in">
+    <div class="topbar-brand">
+      <a class="topbar-wordmark" href="../../index.html"><span class="wm-full">Aria Rizki Ermawan</span><span class="wm-short">ARE</span></a>
+      <span class="topbar-sub">Case study · BT-03</span>
+    </div>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="../../index.html">Profile</a>
+        <a href="../index.html" aria-current="page">Work</a>
+        <a href="../../skills/index.html">How I think</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle aria-label="Switch theme" title="Theme">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"></circle>
+          <path d="M8 1 A7 7 0 0 0 8 15 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+      <a class="nav-cta" href="../../contact/index.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- ── Project header ─────────────────────────────────────── -->
+  <header class="case-hero">
+    <div class="rule">
+      <span class="rule-mark">BT-03<span class="sep">/</span>Operations<span class="sep">/</span>Case study</span>
+    </div>
+
+    <h1 class="t-h1">Quality Improvement Project</h1>
+    <p class="hero-thesis">A quality problem taken from customer complaint to controlled process — <em>without missing sales</em>.</p>
+
+    <div class="case-meta">
+      <div>
+        <p class="t-label meta-k">Role</p>
+        <p class="meta-v">VP Manufacture</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Domain</p>
+        <p class="meta-v">Quality · Process engineering</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Period</p>
+        <p class="meta-v">2024 — 2026</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Partner</p>
+        <p class="meta-v">LAPI ITB</p>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <figure class="ev ev--auto">
+        <div class="ev-frame">
+          <div class="cv-head">
+            <p class="t-label">Complaint rate, PPM of units produced</p>
+            <span class="t-meta">Source · complaint register</span>
+          </div>
+          <div class="ba">
+            <div class="ba-group">
+              <div class="ba-row">
+                <span class="ba-k">24 H1</span>
+                <span class="ba-track"><i class="ba-fill" style="width:13.3%"></i></span>
+                <span class="ba-v">4.7</span>
+              </div>
+              <div class="ba-row">
+                <span class="ba-k">24 H2</span>
+                <span class="ba-track"><i class="ba-fill ba-fill--peak" style="width:100%"></i></span>
+                <span class="ba-v">35.5</span>
+              </div>
+              <div class="ba-row">
+                <span class="ba-k">25 H1</span>
+                <span class="ba-track"><i class="ba-fill" style="width:87.8%"></i></span>
+                <span class="ba-v">31.2</span>
+              </div>
+              <div class="ba-row">
+                <span class="ba-k">25 H2</span>
+                <span class="ba-track"><i class="ba-fill" style="width:62.8%"></i></span>
+                <span class="ba-v">22.3</span>
+              </div>
+              <div class="ba-row">
+                <span class="ba-k">26 H1</span>
+                <span class="ba-track"><i class="ba-fill ba-fill--after" style="width:40.6%"></i></span>
+                <span class="ba-v">14.4</span>
+              </div>
+              <div class="ba-row">
+                <span class="ba-k">26 Jul</span>
+                <span class="ba-track"><i class="ba-fill ba-fill--after" style="width:10.4%"></i></span>
+                <span class="ba-v">3.7</span>
+              </div>
+            </div>
+          </div>
+          <p class="diag-note">Half-year windows · the most recent production months are still accruing and will rise slightly</p>
+        </div>
+        <figcaption class="ev-cap">
+          <span class="t-label">Hero</span>
+          <span class="t-caption">Quality broke in the second half of 2024, was diagnosed that September, and has come back down to roughly where it started.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- ── Narrative ──────────────────────────────────────────── -->
+  <div class="case-body">
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">01</span>
+          <h2 class="t-label cb-title">Situation</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            On taking responsibility for manufacturing, the complaint register
+            was climbing steeply. The second half of 2024 ran at roughly seven
+            times the rate of the first — a deterioration in months, not a
+            standing condition.
+          </p>
+          <p class="t-body">
+            Complaints are escaped defects: what reached a customer and came
+            back. They are the last and most expensive place a quality problem shows up, and they were the only signal available: no in-process or laboratory data existed to explain why.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">02</span>
+          <h2 class="t-label cb-title">Challenge</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            The cause was not visible from inside the plant&rsquo;s own records.
+            It sat in the water treatment process — filtration, disinfection,
+            piping — where the operating practice was long established, assumed correct and never measured.
+          </p>
+          <p class="t-body">
+            Two constraints shaped what followed. The plant did not
+            have the analytical capability to settle the question itself, and
+            the work would need production stopped in a business that still had
+            to fill its orders.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">03</span>
+          <h2 class="t-label cb-title">Approach</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            Rather than guess, I commissioned a process and facilities assessment, as business sponsor, from
+            <strong>LAPI ITB</strong>, the engineering consultancy of Institut
+            Teknologi Bandung, and set its scope, the investment priorities and
+            the success criteria.
+          </p>
+          <p class="t-body">
+            Five engineering disciplines worked the plant at once —
+            environmental, chemical, microbiology, mechanical, and electrical
+            control and instrumentation. Samples were taken going in and going
+            out of every process unit rather than at the end of the line, raw
+            water and product were tested against the full regulatory
+            parameter set, and microbial populations were characterised in the
+            laboratory.
+          </p>
+          <p class="t-body">
+            The findings then went through the company&rsquo;s own investment
+            route — a business requirement document and an investment case
+            under the framework in <a href="../investment-framework/index.html">BT-01</a> —
+            so the fix was funded as capital work with a scope, a cost and a stated benefit, rather than absorbed into maintenance.
+          </p>
+        </div>
+      </section>
+
+    <!-- Evidence — what the assessment found, unit by unit. -->
+    <section class="case-block case-block--full reveal">
+      <div class="cb-head">
+        <h2 class="t-label">Visual evidence</h2>
+        <span class="t-meta">BT-03 · Fig. 01</span>
+      </div>
+      <div class="cb-body">
+        <figure class="ev ev--auto">
+          <div class="ev-frame">
+            <p class="t-label">What the assessment found, going in and going out of each unit</p>
+            <div class="ev-scroll">
+              <table class="dtable scoring">
+                <thead>
+                  <tr>
+                    <th scope="col">Process unit</th>
+                    <th scope="col">Finding</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="name">Carbon filter</td>
+                    <td>Performing as designed — very high microbial removal, chlorine and suspended solids taken out. Not the problem.</td>
+                  </tr>
+                  <tr>
+                    <td class="name">Micro filter</td>
+                    <td>Microbial counts <em>rose</em> across the unit. The established practice of washing and reusing cartridges was implicated as a contamination source, and the rating was coarser than the smallest organisms it was assumed to stop.</td>
+                  </tr>
+                  <tr>
+                    <td class="name">Ozone and UV</td>
+                    <td>No measurable reduction at the disinfection stage. Electrical measurement showed the UV unit running far below its original specification.</td>
+                  </tr>
+                  <tr>
+                    <td class="name">Piping and tanks</td>
+                    <td>Scaling and adherent growth between mixing and filling; debris present downstream of the mixing tank and absent upstream — locating the ingress inside the plant.</td>
+                  </tr>
+                  <tr>
+                    <td class="name">Product water</td>
+                    <td>Two parameters running outside their thresholds <span class="redact" aria-label="parameters redacted"></span>, both traced to process chemistry rather than to the raw water alone.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <figcaption class="ev-cap">
+            <span class="t-label">Fig. 01</span>
+            <span class="t-caption">The main finding was not a broken machine. A maintenance practice was adding what the plant thought it was removing, and the disinfection stage was not working as assumed.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">04</span>
+          <h2 class="t-label cb-title">Execution</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            The action list followed the findings rather than the symptoms.
+            Cartridge washing stopped and replacement took its place; filtration
+            was tightened, with the pumping to carry it. Disinfection capacity
+            was restored to the maximum operating flow and given online
+            measurement, so it could be checked rather than assumed. Process piping was replaced in stainless steel and the
+            tanks cleaned; a further treatment stage was added downstream. The
+            filling area was closed up — hygienic housekeeping under standard
+            procedure, positive pressure, filtered air.
+          </p>
+          <p class="t-body">
+            Sequencing was the hard part. Each of those steps needs the line down, and the plant was still filling orders, so the work was staged around production.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">05</span>
+          <h2 class="t-label cb-title">Result</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            The register turned in the last quarter of 2025, once the facility
+            and process work was in, and 2026 has held. On the same January to
+            July window either side, the complaint rate fell from 35.0 to 13.0
+            PPM and complaint events from 345 to 65. The most recent months run
+            between roughly one and five PPM, against 2025 months that reached
+            the fifties.
+          </p>
+          <ul class="case-outcomes">
+            <li>Complaint rate down 63% and complaint events down 81%, like-for-like.</li>
+            <li>Cost of poor quality down from 2.46% of revenue to 0.98%, like-for-like — a peak month of 3.47% in 2025 against a best month of 0.77% in 2026.</li>
+            <li>Failure cost moved inside the plant: external failure fell 91% as a share of revenue, from two-fifths of the quality bill to under a tenth.</li>
+            <li>Quality is now a standing management view rather than a monthly count — the register runs as a module of <a href="../manufacture-terminal/index.html">the Terminal</a>, with defect families, shelf-age patterns and recurrence after corrective action.</li>
+            <li>Sales fulfilment maintained through every stoppage the rebuild required.</li>
+            <li>One spike remains, in February 2026, from a single large event; it is in the chart rather than smoothed out.</li>
+          </ul>
+        </div>
+      </section>
+
+    <!-- Result evidence — what the failure actually cost. -->
+    <section class="case-block case-block--full reveal">
+      <div class="cb-head">
+        <h2 class="t-label">Result evidence</h2>
+        <span class="t-meta">BT-03 · Fig. 02</span>
+      </div>
+      <div class="cb-body">
+        <figure class="ev ev--auto">
+          <div class="ev-frame">
+            <p class="t-label">Cost of poor quality, as a share of revenue</p>
+            <div class="ev-scroll">
+              <table class="dtable scoring">
+                <thead>
+                  <tr>
+                    <th scope="col">January — July</th>
+                    <th scope="col" class="num">Total</th>
+                    <th scope="col" class="num">Internal failure</th>
+                    <th scope="col" class="num">External failure</th>
+                    <th scope="col" class="num">External share</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="name">2025</td>
+                    <td class="num">2.46%</td>
+                    <td class="num">1.49%</td>
+                    <td class="num">0.97%</td>
+                    <td class="num">40%</td>
+                  </tr>
+                  <tr>
+                    <td class="name">2026</td>
+                    <td class="num">0.98%</td>
+                    <td class="num">0.84%</td>
+                    <td class="num">0.08%</td>
+                    <td class="num">9%</td>
+                  </tr>
+                  <tr>
+                    <td class="name">Change</td>
+                    <td class="num">−60%</td>
+                    <td class="num">−44%</td>
+                    <td class="num">−91%</td>
+                    <td class="num">—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="diag-note">Rupiah values withheld · internal and external failure sum to the total</p>
+          </div>
+          <figcaption class="ev-cap">
+            <span class="t-label">Fig. 02</span>
+            <span class="t-caption">The split matters as much as the total. External failure — what a customer paid for and sent back — fell by 91%, internal failure by 44%. Quality still costs money, but it is now mostly caught inside the plant, where it is cheapest.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Result evidence — the intervention list and what now holds it. -->
+    <section class="case-block case-block--full reveal">
+      <div class="cb-head">
+        <h2 class="t-label">Result evidence</h2>
+        <span class="t-meta">BT-03 · Fig. 03–04</span>
+      </div>
+      <div class="cb-body">
+        <div class="ev-grid">
+          <figure class="ev ev--auto">
+            <div class="ev-frame">
+              <p class="t-label">What was actually changed</p>
+              <ul class="case-outcomes">
+                <li><strong>Filtration</strong> — cartridge washing abandoned for replacement; rating tightened, pumping upgraded to suit.</li>
+                <li><strong>Disinfection</strong> — ozone and UV capacity restored to maximum operating flow, with online measurement.</li>
+                <li><strong>Distribution</strong> — process piping replaced in stainless steel, tanks cleaned.</li>
+                <li><strong>Treatment</strong> — a further polishing stage added downstream of ozonation.</li>
+                <li><strong>Environment</strong> — filling area under hygienic procedure, positive pressure and filtered air.</li>
+                <li><strong>Raw water</strong> — source parameters tested and addressed at the intake.</li>
+              </ul>
+            </div>
+            <figcaption class="ev-cap">
+              <span class="t-label">Fig. 03</span>
+              <span class="t-caption">Six changes, each traceable to a specific finding in the assessment.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="ev ev--auto">
+            <div class="ev-frame">
+              <p class="t-label">What holds it now</p>
+              <ol class="tl">
+                <li>
+                  <time>Standing</time>
+                  <strong>The register is a management view</strong>
+                  <p>Complaint rate, defect family and product, in one place, monthly rather than on request.</p>
+                </li>
+                <li>
+                  <time>Standing</time>
+                  <strong>Shelf-age exposure</strong>
+                  <p>Failures read against how long a unit had been in the market, not only against when the complaint arrived.</p>
+                </li>
+                <li>
+                  <time>Standing</time>
+                  <strong>Recurrence after corrective action</strong>
+                  <p>Whether a fix held is tracked as a number, so a closed action is not assumed to be a solved problem.</p>
+                </li>
+                <li data-now>
+                  <time>Open</time>
+                  <strong>Detection is still mostly external</strong>
+                  <p>Most complaint events still reach a customer before the plant sees them, even though the cost of what escapes has fallen by nine-tenths. Moving detection upstream is the next piece of work.</p>
+                </li>
+              </ol>
+            </div>
+            <figcaption class="ev-cap">
+              <span class="t-label">Fig. 04</span>
+              <span class="t-caption">The measurement has to outlast the project.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="insight reveal">
+    <p class="t-label">The view</p>
+    <p class="t-quote">The plant was cleaning the thing that was contaminating it.</p>
+    <p class="t-body">
+      No one was careless. A reasonable maintenance practice, never measured, had become the source of the problem it was meant to prevent, and the disinfection stage was not reducing anything. Neither shows up without measuring in and out of every unit.
+    </p>
+  </div>
+
+  <!-- ── Key metrics ────────────────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">Key metrics</p>
+    <div class="metrics-band">
+        <div class="metric">
+          <p class="metric-v metric-v--range">35.0 → 13.0</p>
+          <p class="t-label metric-l">PPM, like-for-like</p>
+        </div>
+        <div class="metric">
+          <p class="metric-v">−81<small>%</small></p>
+          <p class="t-label metric-l">Complaint events</p>
+        </div>
+        <div class="metric">
+          <p class="metric-v metric-v--range">2.46% → 0.98%</p>
+          <p class="t-label metric-l">COPQ / revenue</p>
+        </div>
+        <div class="metric">
+          <p class="metric-v">5</p>
+          <p class="t-label metric-l">Engineering disciplines</p>
+        </div>
+    </div>
+  </section>
+
+  <!-- ── What this demonstrates ─────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">What this demonstrates</p>
+    <div class="charlist">
+      <span class="chip">Root-cause diagnosis</span>
+      <span class="chip">Technical partner management</span>
+      <span class="chip">Quality management system</span>
+      <span class="chip">Capital work under production</span>
+      <span class="chip">Process and facility engineering</span>
+      <span class="chip">Measurement after the project</span>
+    </div>
+    <p class="t-caption case-note">
+      Complaint figures are read from the plant&rsquo;s own register as held by
+      the Quality Intelligence module, January 2025 to August 2026, in parts per
+      million of units produced; like-for-like windows are used because the
+      register is seasonal, and recent production months are still accruing.
+      Cost of poor quality is read from the plant&rsquo;s COPQ workbook through
+      July 2026 — a finance basis, not the complaint register — and is shown
+      only as a share of revenue; the underlying values are withheld.
+      The assessment team, the specific product parameters found outside
+      threshold, and the process settings are redacted; LAPI ITB is named as
+      the consultant with permission.
+    </p>
+  </section>
+
+  <!-- ── Related work ───────────────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">Related work</p>
+    <div class="navpanel">
+        <a class="nav-tile" href="../investment-framework/index.html">
+          <span class="nt-ref">BT-01</span>
+          <span class="nt-name">Investment Framework &amp; Governance</span>
+          <span class="nt-state"><span class="t-meta">Governance</span><span class="t-meta">Case study →</span></span>
+        </a>
+        <a class="nav-tile" href="../blowing-machine/index.html">
+          <span class="nt-ref">BT-02</span>
+          <span class="nt-name">Blowing Machine Investment</span>
+          <span class="nt-state"><span class="t-meta">Investment</span><span class="t-meta">Case study →</span></span>
+        </a>
+        <div class="nav-tile" aria-current="page">
+          <span class="nt-ref">BT-03</span>
+          <span class="nt-name">Quality Improvement Project</span>
+          <span class="nt-state"><span class="t-meta">Operations</span><span class="t-meta">Reading</span></span>
+        </div>
+        <a class="nav-tile" href="../manufacture-terminal/index.html">
+          <span class="nt-ref">BT-04</span>
+          <span class="nt-name">Manufacture Terminal</span>
+          <span class="nt-state"><span class="t-meta">Decision intelligence</span><span class="t-meta">Case study →</span></span>
+        </a>
+    </div>
+  </section>
+
+  <!-- ── Previous / index / next ────────────────────────────── -->
+  <nav class="pager" aria-label="Case studies">
+    <a class="pager-prev" href="../blowing-machine/index.html">
+      <span class="t-label">← Previous work</span>
+      <span class="pager-t">Blowing Machine Investment</span>
+    </a>
+    <a class="pager-index" href="../index.html">All selected work</a>
+    <a class="pager-next" href="../manufacture-terminal/index.html">
+      <span class="t-label">Next work →</span>
+      <span class="pager-t">Manufacture Terminal</span>
+    </a>
+  </nav>
+
+  <!-- ── Colophon ───────────────────────────────────────────── -->
+  <footer class="colophon" id="contact">
+    <div class="rule">
+      <span class="rule-mark">ARE<span class="sep">/</span>Contact<span class="sep">/</span>2026</span>
+    </div>
+    <p class="cl">Manufacturing, finance, and the systems <em>that connect them</em>.</p>
+    <div class="cta-row">
+      <a class="btn btn--tertiary" href="mailto:ariarzk@gmail.com">ariarzk@gmail.com<span class="arw">→</span></a>
+    </div>
+    <div class="colophon-meta">
+      <span class="t-meta">Aria Rizki Ermawan · Portfolio</span>
+      <span class="t-meta">Built on the EMW design system · Rev 02</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
