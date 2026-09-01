@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--
+  CASE STUDY — BT-02 Blowing Machine Investment
+  Aria Rizki Ermawan · portfolio
+
+  WRITTEN — from the investment accountability report (LPJ) presented to the
+  board and commissioners, September 2024, and its financial annex.
+  REDACTED FOR CONFIDENTIALITY: every absolute rupiah figure (project cost,
+  credit facility, NPV, cost tables), the machine supplier, the document
+  reference, and all names and signatures. Ratios, variances and dates are
+  shown because they carry the argument without disclosing the amounts.
+
+  Styling comes from the shared EMW stylesheets in /emw — nothing on this page
+  is page-specific CSS. Behaviour (theme, reveal) comes from /emw/portfolio.js.
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blowing Machine Investment — Aria Rizki Ermawan</title>
+<meta name="description" content="Case study BT-02 — Blowing Machine Investment. Corporate Development & Finance.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../emw/tokens.css">
+<link rel="stylesheet" href="../../emw/ds-bundle.css">
+<link rel="stylesheet" href="../../emw/portfolio.css">
+<script>
+  // Resolve the stored theme before first paint.
+  try {
+    var t = localStorage.getItem('emw-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+<script src="../../emw/portfolio.js" defer></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="shell topbar-in">
+    <div class="topbar-brand">
+      <a class="topbar-wordmark" href="../../index.html"><span class="wm-full">Aria Rizki Ermawan</span><span class="wm-short">ARE</span></a>
+      <span class="topbar-sub">Case study · BT-02</span>
+    </div>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="../../index.html">Profile</a>
+        <a href="../index.html" aria-current="page">Work</a>
+        <a href="../../skills/index.html">How I think</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle aria-label="Switch theme" title="Theme">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"></circle>
+          <path d="M8 1 A7 7 0 0 0 8 15 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+      <a class="nav-cta" href="../../contact/index.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- ── Project header ─────────────────────────────────────── -->
+  <header class="case-hero">
+    <div class="rule">
+      <span class="rule-mark">BT-02<span class="sep">/</span>Investment<span class="sep">/</span>Case study</span>
+    </div>
+
+    <h1 class="t-h1">Blowing Machine Investment</h1>
+    <p class="hero-thesis">The framework&rsquo;s first major test — <em>capacity for growth, justified and financed</em>.</p>
+
+    <div class="case-meta">
+      <div>
+        <p class="t-label meta-k">Role</p>
+        <p class="meta-v">Corporate Development &amp; Finance</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Domain</p>
+        <p class="meta-v">Manufacturing capacity · Capital investment</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Period</p>
+        <p class="meta-v">Nov 2023 — Sep 2024</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Type</p>
+        <p class="meta-v">Capex <span class="redact" aria-label="reference redacted"></span> · debt-financed</p>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <figure class="ev ev--auto">
+        <div class="ev-frame">
+          <p class="t-label">Closing scorecard — what the case promised against what it returned</p>
+          <div class="ev-scroll">
+            <table class="dtable scoring">
+              <thead>
+                <tr>
+                  <th scope="col">Measure</th>
+                  <th scope="col">Planned</th>
+                  <th scope="col">Actual</th>
+                  <th scope="col">Variance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="name">Total project cost</td>
+                  <td><span class="redact" aria-label="redacted"></span></td>
+                  <td><span class="redact" aria-label="redacted"></span></td>
+                  <td>+0.10%</td>
+                </tr>
+                <tr>
+                  <td class="name">Credit facility drawn</td>
+                  <td><span class="redact" aria-label="redacted"></span></td>
+                  <td><span class="redact" aria-label="redacted"></span></td>
+                  <td>0.00%</td>
+                </tr>
+                <tr>
+                  <td class="name">Project length</td>
+                  <td>8 months</td>
+                  <td>10 months</td>
+                  <td>+2 months</td>
+                </tr>
+                <tr>
+                  <td class="name">IRR</td>
+                  <td>4.35%</td>
+                  <td>38.35%</td>
+                  <td>+34.00 pp</td>
+                </tr>
+                <tr>
+                  <td class="name">Payback period</td>
+                  <td>6 years</td>
+                  <td>3 years</td>
+                  <td>−50%</td>
+                </tr>
+                <tr>
+                  <td class="name">Benefit–cost ratio</td>
+                  <td>0.23</td>
+                  <td>1.42</td>
+                  <td>+1.19</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="diag-note">Absolute values withheld · returns measured against a 12% required return</p>
+        </div>
+        <figcaption class="ev-cap">
+          <span class="t-label">Hero</span>
+          <span class="t-caption">The table the accountability report opens with. A case approved on a 4.35% return closed at 38.35% — and the cost estimate held to a tenth of a per cent.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- ── Narrative ──────────────────────────────────────────── -->
+  <div class="case-body">
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">01</span>
+          <h2 class="t-label cb-title">Situation</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            Manufacturing was running out of room. Two ageing two-cavity
+            blowing machines carried the bottle supply across three shifts, and
+            they could not keep up: just under a third of output was being
+            toll-manufactured outside the plant, at a cost per unit the company did not control and a quality it could only check after delivery.
+          </p>
+          <p class="t-body">
+            Capacity was the limit on growth, and it cost money every month it went unaddressed.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">02</span>
+          <h2 class="t-label cb-title">Challenge</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            This was the first major investment to run under the governance
+            framework written the year before, so it tested two things at once: whether the plant could add capacity, and whether the new process could handle a decision that size.
+          </p>
+          <p class="t-body">
+            It also had to be financed. The company needed a bank facility
+            secured on its own assets — the one class of investment the policy
+            sends all the way to the commissioner — so the case had to hold up for a lender as well as for the board.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">03</span>
+          <h2 class="t-label cb-title">Approach</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            The case was built the way the policy requires: a business
+            requirement document setting out the need, the cost–benefit
+            estimate, the risks and their mitigations and the implementation
+            timeline, then an investment memorandum for the board — thesis,
+            business plan, funding structure, risk analysis and financials.
+          </p>
+          <p class="t-body">
+            Appraisal was deliberately conservative. Cash flows were discounted
+            against the company&rsquo;s required return, and the case was
+            carried on cost savings the plant could name — labour, maintenance,
+            materials and the toll-manufacturing bill that would disappear —
+            rather than on expected demand growth. That is why the approved return was only 4.35% — the upside was deliberately left out.
+          </p>
+          <p class="t-body">
+            The scoring sheet was completed independently by three assessors at
+            board level — the commissioner, the chief executive, and audit and
+            compliance — across the six criteria the policy defines. Financing
+            was structured alongside the appraisal, so the funding request and
+            the business case reached the commissioner as one document.
+          </p>
+        </div>
+      </section>
+
+    <!-- Evidence — delivery against plan, and where the two months went. -->
+    <section class="case-block case-block--full reveal">
+      <div class="cb-head">
+        <h2 class="t-label">Visual evidence</h2>
+        <span class="t-meta">BT-02 · Fig. 01</span>
+      </div>
+      <div class="cb-body">
+        <figure class="ev ev--auto">
+          <div class="ev-frame">
+            <p class="t-label">Where the two months went</p>
+            <ol class="tl">
+              <li>
+                <time>On plan</time>
+                <strong>Civil and services works</strong>
+                <p>Machine room, compressor room, electrical installation, piping and wiring — all delivered to the day.</p>
+              </li>
+              <li>
+                <time>Overrun</time>
+                <strong>Machine fabrication</strong>
+                <p>The moulding vendor's national holiday shutdown pushed fabrication well past plan — the largest delay, and the one least within the plant's control.</p>
+              </li>
+              <li>
+                <time>Overrun</time>
+                <strong>Shipping and customs</strong>
+                <p>Sample preform verification ran long, and the machine was held at port longer than the plan allowed.</p>
+              </li>
+              <li>
+                <time>Ahead of plan</time>
+                <strong>Installation</strong>
+                <p>Installed faster than scheduled once the machine was on site.</p>
+              </li>
+              <li data-now>
+                <time>Overrun</time>
+                <strong>Training, commissioning and handover</strong>
+                <p>Technical adjustment and knowledge transfer took longer than planned; the report records this as a lesson.</p>
+              </li>
+            </ol>
+          </div>
+          <figcaption class="ev-cap">
+            <span class="t-label">Fig. 01</span>
+            <span class="t-caption">Ten months against a planned eight. Every stage the plant controlled finished on or ahead of plan; the delays came from an overseas vendor, a port, and training.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">04</span>
+          <h2 class="t-label cb-title">Execution</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            One four-cavity machine replaced the pair it was bought to retire.
+            Output that had been going out to toll manufacturers came back
+            in-house, and the line covered demand on two shifts where the old
+            configuration had needed three.
+          </p>
+          <p class="t-body">
+            Cost moved in four directions, and the report records all four: labour and maintenance fell sharply, the toll bill and
+            the outsourced material cost went to zero, and electricity rose —
+            a faster machine draws more power. Netted at the demand level the
+            report uses, the plant&rsquo;s operating cost for the same output
+            fell by roughly seven-eighths.
+          </p>
+          <p class="t-body">
+            Demand then ran about 50% above the forecast the case was built on, which explains most of the gap between the approved return and the realised one.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">05</span>
+          <h2 class="t-label cb-title">Result</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            Delivered at a tenth of a per cent over the estimate, financed
+            exactly as structured, and reported back to the board and
+            commissioners in a formal accountability report eleven months after
+            the first works began.
+          </p>
+          <ul class="case-outcomes">
+            <li>Manufacturing capacity up approximately 4×, on fewer shifts.</li>
+            <li>Fixed labour requirement down by roughly 20 crew — about IDR 70 million a month.</li>
+            <li>Supporting packaging material down about IDR 3,600 per box — roughly IDR 150 million a month.</li>
+            <li>Toll manufacturing eliminated: output that had been made outside came back into the plant.</li>
+            <li>IRR 38.35% against 4.35% approved; payback three years against six; benefit–cost 1.42 against 0.23.</li>
+            <li>The first major investment delivered under the new governance framework — and the first to be closed out under it.</li>
+          </ul>
+        </div>
+      </section>
+
+    <!-- Result evidence — the cost step, and the governance trail. -->
+    <section class="case-block case-block--full reveal">
+      <div class="cb-head">
+        <h2 class="t-label">Result evidence</h2>
+        <span class="t-meta">BT-02 · Fig. 02–03</span>
+      </div>
+      <div class="cb-body">
+        <div class="ev-grid">
+          <figure class="ev ev--auto">
+            <div class="ev-frame">
+              <p class="t-label">Operating cost, old line against new — direction of travel</p>
+              <div class="ev-scroll">
+                <table class="dtable scoring">
+                  <thead>
+                    <tr>
+                      <th scope="col">Cost line</th>
+                      <th scope="col">After commissioning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="name">Toll manufacturing</td><td>Eliminated</td></tr>
+                    <tr><td class="name">Material — plastic</td><td>Eliminated</td></tr>
+                    <tr><td class="name">Maintenance</td><td>Down sharply</td></tr>
+                    <tr><td class="name">Labour</td><td>Down sharply</td></tr>
+                    <tr><td class="name">Overtime</td><td>Down</td></tr>
+                    <tr><td class="name">Electricity</td><td>Up — a faster machine draws more</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="diag-note">Amounts withheld · net effect stated in the narrative</p>
+            </div>
+            <figcaption class="ev-cap">
+              <span class="t-label">Fig. 02</span>
+              <span class="t-caption">Electricity went up, and the report records it.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="ev ev--auto">
+            <div class="ev-frame">
+              <p class="t-label">The governance trail, start to close</p>
+              <ul class="case-outcomes">
+                <li><strong>Business requirement document</strong> — need, cost–benefit, risk, timeline.</li>
+                <li><strong>Project scoring</strong> — six criteria, scored independently by the commissioner, the CEO, and audit and compliance.</li>
+                <li><strong>Investment memorandum</strong> — the board document, with the funding structure attached.</li>
+                <li><strong>Commissioner approval</strong> — required because the facility was secured on company assets.</li>
+                <li><strong>Accountability report</strong> — plan against actual, presented to the board and commissioners and signed off by them.</li>
+                <li><strong>Cross-functional close-out</strong> — finance, manufacturing, production, planning, maintenance, human capital and people development in the room.</li>
+              </ul>
+            </div>
+            <figcaption class="ev-cap">
+              <span class="t-label">Fig. 03</span>
+              <span class="t-caption">The path <a href="../investment-framework/index.html">BT-01</a> defined, walked by the investment it was written for.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="insight reveal">
+    <p class="t-label">The view</p>
+    <p class="t-quote">The case was approved on savings, not on growth.</p>
+    <p class="t-body">
+      It was built on savings the plant could name rather than on expected demand growth, which is why the approved return was low and the realised one was not. The accountability report states this, along with the two months lost and the one cost line that rose.
+    </p>
+  </div>
+
+  <!-- ── Key metrics ────────────────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">Key metrics</p>
+    <div class="metrics-band">
+        <div class="metric">
+          <p class="metric-v">≈4×</p>
+          <p class="t-label metric-l">Capacity</p>
+        </div>
+        <div class="metric">
+          <p class="metric-v metric-v--range">4.35% → 38.35%</p>
+          <p class="t-label metric-l">IRR, planned to actual</p>
+        </div>
+        <div class="metric">
+          <p class="metric-v metric-v--range">6 → 3 yrs</p>
+          <p class="t-label metric-l">Payback period</p>
+        </div>
+        <div class="metric">
+          <p class="metric-v">+0.10<small>%</small></p>
+          <p class="t-label metric-l">Cost against estimate</p>
+        </div>
+    </div>
+  </section>
+
+  <!-- ── What this demonstrates ─────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">What this demonstrates</p>
+    <div class="charlist">
+      <span class="chip">Investment appraisal</span>
+      <span class="chip">Business case and memorandum</span>
+      <span class="chip">Debt financing structure</span>
+      <span class="chip">Capital project delivery</span>
+      <span class="chip">Make-versus-buy</span>
+      <span class="chip">Post-investment accountability</span>
+    </div>
+    <p class="t-caption case-note">
+      Drawn from the accountability report presented to the board and
+      commissioners. Absolute values — project cost, the credit facility, net
+      present value and the cost tables — along with the supplier, the document
+      reference and every name and signature, are redacted here. Ratios,
+      variances and dates are shown as reported.
+    </p>
+  </section>
+
+  <!-- ── Related work ───────────────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">Related work</p>
+    <div class="navpanel">
+        <a class="nav-tile" href="../investment-framework/index.html">
+          <span class="nt-ref">BT-01</span>
+          <span class="nt-name">Investment Framework &amp; Governance</span>
+          <span class="nt-state"><span class="t-meta">Governance</span><span class="t-meta">Case study →</span></span>
+        </a>
+        <div class="nav-tile" aria-current="page">
+          <span class="nt-ref">BT-02</span>
+          <span class="nt-name">Blowing Machine Investment</span>
+          <span class="nt-state"><span class="t-meta">Investment</span><span class="t-meta">Reading</span></span>
+        </div>
+        <a class="nav-tile" href="../quality-improvement/index.html">
+          <span class="nt-ref">BT-03</span>
+          <span class="nt-name">Quality Improvement Project</span>
+          <span class="nt-state"><span class="t-meta">Operations</span><span class="t-meta">Case study →</span></span>
+        </a>
+        <a class="nav-tile" href="../manufacture-terminal/index.html">
+          <span class="nt-ref">BT-04</span>
+          <span class="nt-name">Manufacture Terminal</span>
+          <span class="nt-state"><span class="t-meta">Decision intelligence</span><span class="t-meta">Case study →</span></span>
+        </a>
+    </div>
+  </section>
+
+  <!-- ── Previous / index / next ────────────────────────────── -->
+  <nav class="pager" aria-label="Case studies">
+    <a class="pager-prev" href="../investment-framework/index.html">
+      <span class="t-label">← Previous work</span>
+      <span class="pager-t">Investment Framework &amp; Governance</span>
+    </a>
+    <a class="pager-index" href="../index.html">All selected work</a>
+    <a class="pager-next" href="../quality-improvement/index.html">
+      <span class="t-label">Next work →</span>
+      <span class="pager-t">Quality Improvement Project</span>
+    </a>
+  </nav>
+
+  <!-- ── Colophon ───────────────────────────────────────────── -->
+  <footer class="colophon" id="contact">
+    <div class="rule">
+      <span class="rule-mark">ARE<span class="sep">/</span>Contact<span class="sep">/</span>2026</span>
+    </div>
+    <p class="cl">Manufacturing, finance, and the systems <em>that connect them</em>.</p>
+    <div class="cta-row">
+      <a class="btn btn--tertiary" href="mailto:ariarzk@gmail.com">ariarzk@gmail.com<span class="arw">→</span></a>
+    </div>
+    <div class="colophon-meta">
+      <span class="t-meta">Aria Rizki Ermawan · Portfolio</span>
+      <span class="t-meta">Built on the EMW design system · Rev 02</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

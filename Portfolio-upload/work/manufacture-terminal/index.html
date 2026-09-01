@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!--
+  CASE STUDY — BT-04 Manufacture Terminal
+  Aria Rizki Ermawan · portfolio
+
+  WRITTEN. Content is drawn from the system itself — /Users/user/Desktop/
+  "Manufacture AI" (module registry, builder brief, executive-report and
+  architecture docs) and the public site at manufactureterminal.com.
+  Every figure shown in the screenshot is synthetic, as the product's own
+  public page states; no PT Toyamilindo figure appears anywhere here.
+
+  Styling comes from the shared EMW stylesheets in /emw — nothing on this page
+  is page-specific CSS. Behaviour (theme, reveal) comes from /emw/portfolio.js.
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manufacture Terminal — Aria Rizki Ermawan</title>
+<meta name="description" content="Case study BT-04 — Manufacture Terminal: ten analytics modules, a control tower and a generated executive publication, built and run without an engineering team.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../emw/tokens.css">
+<link rel="stylesheet" href="../../emw/ds-bundle.css">
+<link rel="stylesheet" href="../../emw/portfolio.css">
+<script>
+  // Resolve the stored theme before first paint.
+  try {
+    var t = localStorage.getItem('emw-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+<script src="../../emw/portfolio.js" defer></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="shell topbar-in">
+    <div class="topbar-brand">
+      <a class="topbar-wordmark" href="../../index.html"><span class="wm-full">Aria Rizki Ermawan</span><span class="wm-short">ARE</span></a>
+      <span class="topbar-sub">Case study · BT-04</span>
+    </div>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="../../index.html">Profile</a>
+        <a href="../index.html" aria-current="page">Work</a>
+        <a href="../../skills/index.html">How I think</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle aria-label="Switch theme" title="Theme">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"></circle>
+          <path d="M8 1 A7 7 0 0 0 8 15 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+      <a class="nav-cta" href="../../contact/index.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- ── Project header ─────────────────────────────────────── -->
+  <header class="case-hero">
+    <div class="rule">
+      <span class="rule-mark">BT-04<span class="sep">/</span>Decision intelligence<span class="sep">/</span>Case study</span>
+    </div>
+
+    <h1 class="t-h1">Manufacture Terminal</h1>
+    <p class="hero-thesis">The management system the first three engagements argued for — <em>performance, cost and cause in one view</em>.</p>
+
+    <div class="case-meta">
+      <div>
+        <p class="t-label meta-k">Role</p>
+        <p class="meta-v">VP Manufacture</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Domain</p>
+        <p class="meta-v">Manufacturing · Decision intelligence</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Period</p>
+        <p class="meta-v">2026 — present</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Type</p>
+        <p class="meta-v">Internal platform · in service</p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn--primary" href="https://manufactureterminal.com/" target="_blank" rel="noopener">Explore the live system<span class="arw">→</span></a>
+      <a class="btn btn--tertiary" href="https://manufactureterminal.com/explore/" target="_blank" rel="noopener">The system, explained<span class="arw">↗</span></a>
+    </div>
+
+    <div class="hero-visual">
+      <figure class="ev ev--shot">
+        <div class="ev-frame">
+          <img src="./assets/finance-summary.jpg" width="1800" height="434" alt="The Manufacturing Finance module's executive summary panel: a generated headline reading Manufacturing cost per litre increased, a paragraph reconciling output, cost per litre, rate variance and margin, and five figures beneath it.">
+        </div>
+        <figcaption class="ev-cap">
+          <span class="t-label">Hero</span>
+          <span class="t-caption">The summary the module writes for itself, from the public build. Every figure is synthetic — the system is real and in daily use; these are not its numbers.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- ── System scope ───────────────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">System scope</p>
+
+    <div class="term-panel">
+      <p class="t-label panel-label"><span>Modules in service</span><span>10 live · 6 domains</span></p>
+      <div class="navpanel navpanel--3">
+        <div class="nav-tile">
+          <span class="nt-ref">MT-01</span>
+          <span class="nt-name">Executive KPI</span>
+          <span class="nt-scope">Balanced scorecard and executive KPI review.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">Executive</span></span>
+        </div>
+        <div class="nav-tile">
+          <span class="nt-ref">MT-02</span>
+          <span class="nt-name">Market Intelligence</span>
+          <span class="nt-scope">External signals — macro, consumer confidence, regional and weather.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">Executive</span></span>
+        </div>
+        <div class="nav-tile">
+          <span class="nt-ref">MT-03</span>
+          <span class="nt-name">Production Capability</span>
+          <span class="nt-scope">Line capability, capacity loading, constraints.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">Operations</span></span>
+        </div>
+        <div class="nav-tile">
+          <span class="nt-ref">MT-04</span>
+          <span class="nt-name">Quality Intelligence</span>
+          <span class="nt-scope">Complaint rates, defect families and shelf-age failure patterns.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">Operations</span></span>
+        </div>
+        <div class="nav-tile">
+          <span class="nt-ref">MT-05</span>
+          <span class="nt-name">Manufacturing Finance</span>
+          <span class="nt-scope">Manufacturing financial statement — cost, opex and margin view.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">Finance</span></span>
+        </div>
+        <div class="nav-tile">
+          <span class="nt-ref">MT-06</span>
+          <span class="nt-name">Procurement Intelligence</span>
+          <span class="nt-scope">Raw material prices, supplier exposure and buy signals.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">Supply chain</span></span>
+        </div>
+        <div class="nav-tile">
+          <span class="nt-ref">MT-07</span>
+          <span class="nt-name">Forecasting Studio</span>
+          <span class="nt-scope">AI demand forecasting — model selection, consensus, executive summary.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">Supply chain</span></span>
+        </div>
+        <div class="nav-tile">
+          <span class="nt-ref">MT-08</span>
+          <span class="nt-name">Overtime Analytics</span>
+          <span class="nt-scope">Executive overtime overview and monthly OT intelligence.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">People</span></span>
+        </div>
+        <div class="nav-tile">
+          <span class="nt-ref">MT-09</span>
+          <span class="nt-name">OEN</span>
+          <span class="nt-scope">Organisational effectiveness network — structure and collaboration analysis.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">People</span></span>
+        </div>
+        <div class="nav-tile">
+          <span class="nt-ref">MT-10</span>
+          <span class="nt-name">Plant Map</span>
+          <span class="nt-scope">Interactive facility layout — zoom and filter by area.</span>
+          <span class="nt-state"><span class="status s-ok"><i></i>Live</span><span class="t-meta">Facility</span></span>
+        </div>
+      </div>
+    </div>
+
+    <figure class="ev ev--shot module-shot">
+      <div class="ev-frame">
+        <img src="./assets/terminal-quality-intelligence.jpg" width="1800" height="771"
+             alt="The Quality Intelligence module inside the Terminal: a header naming the customer complaint register as its source, a strip of register totals, and four executive-position cards — affected product, hazardous share, complaint events, and an internal-detection card flagged in red.">
+      </div>
+      <figcaption class="ev-cap">
+        <span class="t-label">Module</span>
+        <span class="t-caption">Quality Intelligence, one of the ten. Captured from the demonstration copy, which runs on invented figures for a plant that does not exist.</span>
+      </figcaption>
+    </figure>
+
+    <p class="t-caption case-note">
+      There is no roadmap here, deliberately. An eleventh module needs no change to the first ten, and listing modules that do not exist would say nothing about the system that does.
+    </p>
+  </section>
+
+  <!-- ── Narrative ──────────────────────────────────────────── -->
+  <div class="case-body">
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">01</span>
+          <h2 class="t-label cb-title">Situation</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            Analysis was not the missing piece. Production, quality, finance,
+            procurement and people each produced it — daily, weekly, monthly and
+            ad hoc, each in its own file, each complete on its own terms.
+          </p>
+          <p class="t-body">
+            What did not exist was a shared management view. The questions that
+            mattered crossed every one of those files: what a unit cost last
+            month, why it moved, and what it would take to move it back is a
+            finance question, a production question and a quality question at
+            once. No file held that question, and no one owned it. By the time the pack
+            was assembled, the month it described was over.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">02</span>
+          <h2 class="t-label cb-title">Challenge</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            Reporting is a record. A decision needs a comparison, a driver and a
+            consequence — and management time went into building the pack rather than discussing the business.
+          </p>
+          <p class="t-body">
+            The constraints were fixed: no engineering team,
+            no platform budget, no server to run one on. Parts of the data
+            foundation genuinely do not exist — no downtime or loss-event data,
+            no in-process quality data, no bill of materials that reconciles
+            with finance material cost. Anything built here had to state those gaps rather than fill them with plausible numbers.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">03</span>
+          <h2 class="t-label cb-title">Approach</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            Design around the decision loop rather than around dashboards. Data,
+            performance, diagnosis, decision, action — each stage a question the system has to answer, and each question with something that has to exist before it can be answered. Most reporting stops at performance. The work is in the stages after it.
+          </p>
+          <p class="t-body">
+            Two rules shaped the build. Every module is a single self-contained
+            HTML file with its data embedded, so it can be written by anyone,
+            reviewed by opening it, and published without touching the core. And every number names its source.
+          </p>
+          <p class="t-body">
+            That made it something the team could extend. A published
+            builder brief sets the contract, and one review gate — beta first,
+            live after — checks that a module runs clean, carries no data it
+            should not, and fits the Terminal before it is published.
+          </p>
+        </div>
+      </section>
+
+    <!-- Evidence — the decision loop, the system's governing shape. -->
+    <section class="case-block case-block--full reveal">
+      <div class="cb-head">
+        <h2 class="t-label">Visual evidence</h2>
+        <span class="t-meta">BT-04 · Fig. 01</span>
+      </div>
+      <div class="cb-body">
+        <figure class="ev ev--auto">
+          <div class="ev-frame">
+            <ol class="loop">
+              <li class="loop-step">
+                <span class="loop-n">01 · Data</span>
+                <span class="loop-q">Is this figure trustworthy?</span>
+                <span class="loop-p">One source per number, stated.</span>
+              </li>
+              <li class="loop-step">
+                <span class="loop-n">02 · Performance</span>
+                <span class="loop-q">Against what?</span>
+                <span class="loop-p">A target, a prior period or a peer. Most reporting stops here.</span>
+              </li>
+              <li class="loop-step">
+                <span class="loop-n">03 · Diagnosis</span>
+                <span class="loop-q">What drove the change?</span>
+                <span class="loop-p">A decomposition that reconciles.</span>
+              </li>
+              <li class="loop-step">
+                <span class="loop-n">04 · Decision</span>
+                <span class="loop-q">What are the options?</span>
+                <span class="loop-p">Scenarios and constraints, each with what it costs.</span>
+              </li>
+              <li class="loop-step">
+                <span class="loop-n">05 · Action</span>
+                <span class="loop-q">Who owns it, and by when?</span>
+                <span class="loop-p">An owner and a next date.</span>
+              </li>
+            </ol>
+            <p class="loop-close">Action feeds the next period&rsquo;s data</p>
+          </div>
+          <figcaption class="ev-cap">
+            <span class="t-label">Fig. 01</span>
+            <span class="t-caption">The management loop the system is built around, with the precondition each stage needs before it can be answered.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">04</span>
+          <h2 class="t-label cb-title">Execution</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            Ten modules across six domains, each answering one management
+            question rather than displaying one function&rsquo;s data. A control
+            tower reads across them rather than down them — factory state, unit
+            economics, cost bridge, product economics, performance matrix, and
+            where the pressure is. Cost per unit decomposes into material,
+            labour, overhead and water, and the bridge reconciles to the rupiah.
+          </p>
+          <p class="t-body">
+            The reporting engine closes the loop. It assembles the manufacturing
+            performance publication as a Word document for any period — month,
+            quarter, half, year to date, full year or a custom range — rasterising
+            eleven charts and zipping the package in the browser. The same engine
+            runs from the command line for batches, so the file that was verified
+            is the file the Terminal produces.
+          </p>
+          <p class="t-body">
+            Verification is a harness of 46 checks in three groups: browser
+            wiring, reconciliation of every headline figure recomputed
+            independently, and coverage of every period type. It caught water missing from the cost-of-goods composition, where the shares summed to 97% under a total claiming 100%. A separate leak
+            gate scans everything bound for the public site for values from the
+            real dataset before anything ships.
+          </p>
+          <p class="t-body">
+            The plant signs in through Cloudflare Access — an email one-time
+            passcode, so there is no password for the system to hold — and Access
+            passes verified identity through to the Worker, which stamps shared
+            records with who made them. Publishing is one command.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <div class="cb-head">
+          <span class="cb-n">05</span>
+          <h2 class="t-label cb-title">Result</h2>
+        </div>
+        <div class="cb-body">
+          <p class="t-body">
+            The plant now has one management view. Meetings open the Terminal instead of a pack, so the evidence, the driver and the decision are in the same place — at the cadence the business moves rather than the cadence a pack can be built.
+          </p>
+          <ul class="case-outcomes">
+            <li>Ten modules live across six domains, in daily use behind authentication.</li>
+            <li>The executive publication is generated for any period, not written — and the generator will not write a strategic initiative; those sections print as marked blanks, because a commitment is management's to make.</li>
+            <li>What the system cannot say is stated in the report itself, in every issue: no OEE decomposition, no cost of poor quality, no supplier risk score, no target or owner a source system does not hold.</li>
+            <li>The team can add modules against a written brief and one review gate; the eleventh requires no change to the first ten.</li>
+            <li>No framework, no build step, no runtime dependency — a stack a non-engineering function can keep running.</li>
+          </ul>
+        </div>
+      </section>
+
+    <!-- Result evidence — how a request travels, and the artefact at the end. -->
+    <section class="case-block case-block--full reveal">
+      <div class="cb-head">
+        <h2 class="t-label">Result evidence</h2>
+        <span class="t-meta">BT-04 · Fig. 02–03</span>
+      </div>
+      <div class="cb-body">
+        <div class="ev-grid">
+          <figure class="ev ev--auto">
+            <div class="ev-frame">
+              <p class="t-label">How a request travels</p>
+              <ol class="tl">
+                <li>
+                  <time>Step 01</time>
+                  <strong>Visitor</strong>
+                  <p>The plant team, on a laptop, with no client to install.</p>
+                </li>
+                <li>
+                  <time>Step 02</time>
+                  <strong>Cloudflare Access</strong>
+                  <p>Zero Trust, email one-time passcode. No password is held by the system.</p>
+                </li>
+                <li>
+                  <time>Step 03</time>
+                  <strong>Cloudflare Worker</strong>
+                  <p>Serves the Terminal and its modules as static assets.</p>
+                </li>
+                <li data-now>
+                  <time>Step 04</time>
+                  <strong>D1, on /api/*</strong>
+                  <p>SQLite at the edge for shared state — plans saved once, stamped with the verified identity that saved them.</p>
+                </li>
+              </ol>
+            </div>
+            <figcaption class="ev-cap">
+              <span class="t-label">Fig. 02</span>
+              <span class="t-caption">The public site and the Terminal are separate Workers sharing no files; the public one holds no operational data.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="ev ev--auto">
+            <div class="ev-frame">
+              <p class="t-label">Artefact</p>
+              <p class="t-h3">The executive report, generated</p>
+              <ul class="case-outcomes">
+                <li>Twelve sections plus appendices, for any period.</li>
+                <li>Eleven charts rasterised and packaged in the browser.</li>
+                <li>A stated methodology and an explicit limits section.</li>
+                <li>Published sample built on synthetic figures.</li>
+              </ul>
+              <div class="cta-row">
+                <a class="btn btn--secondary" href="https://manufactureterminal.com/explore/sample-report.pdf" target="_blank" rel="noopener">Download the sample report<span class="arw">↗</span></a>
+              </div>
+            </div>
+            <figcaption class="ev-cap">
+              <span class="t-label">Fig. 03</span>
+              <span class="t-caption">What the loop ends in: a finished document rather than a dashboard to interpret.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="insight reveal">
+    <p class="t-label">The view</p>
+    <p class="t-quote">The executive report is generated, not written.</p>
+    <p class="t-body">
+      Eleven charts and a Word package assembled in the browser, with no server and no export step. The two sections it will not write are the two that belong to management.
+    </p>
+  </div>
+
+  <!-- ── Key metrics ────────────────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">Key metrics</p>
+    <div class="metrics-band">
+        <div class="metric">
+          <p class="metric-v">10</p>
+          <p class="t-label metric-l">Live modules</p>
+        </div>
+        <div class="metric">
+          <p class="metric-v">6</p>
+          <p class="t-label metric-l">Domains</p>
+        </div>
+        <div class="metric">
+          <p class="metric-v">46</p>
+          <p class="t-label metric-l">Verification checks</p>
+        </div>
+        <div class="metric">
+          <p class="metric-v">0</p>
+          <p class="t-label metric-l">Frameworks or build steps</p>
+        </div>
+    </div>
+  </section>
+
+  <!-- ── What this demonstrates ─────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">What this demonstrates</p>
+    <div class="charlist">
+      <span class="chip">Decision architecture</span>
+      <span class="chip">Systems design without an engineering team</span>
+      <span class="chip">Unit-cost decomposition</span>
+      <span class="chip">Data governance and stated limits</span>
+      <span class="chip">Extensible module contract</span>
+      <span class="chip">Shipped and in service</span>
+    </div>
+  </section>
+
+  <!-- ── Related work ───────────────────────────────────────── -->
+  <section class="case-part reveal">
+    <p class="t-label">Related work</p>
+    <div class="navpanel">
+        <a class="nav-tile" href="../investment-framework/index.html">
+          <span class="nt-ref">BT-01</span>
+          <span class="nt-name">Investment Framework &amp; Governance</span>
+          <span class="nt-state"><span class="t-meta">Governance</span><span class="t-meta">Case study →</span></span>
+        </a>
+        <a class="nav-tile" href="../blowing-machine/index.html">
+          <span class="nt-ref">BT-02</span>
+          <span class="nt-name">Blowing Machine Investment</span>
+          <span class="nt-state"><span class="t-meta">Investment</span><span class="t-meta">Case study →</span></span>
+        </a>
+        <a class="nav-tile" href="../quality-improvement/index.html">
+          <span class="nt-ref">BT-03</span>
+          <span class="nt-name">Quality Improvement Project</span>
+          <span class="nt-state"><span class="t-meta">Operations</span><span class="t-meta">Case study →</span></span>
+        </a>
+        <div class="nav-tile" aria-current="page">
+          <span class="nt-ref">BT-04</span>
+          <span class="nt-name">Manufacture Terminal</span>
+          <span class="nt-state"><span class="t-meta">Decision intelligence</span><span class="t-meta">Reading</span></span>
+        </div>
+    </div>
+  </section>
+
+  <!-- ── Previous / index / next ────────────────────────────── -->
+  <nav class="pager" aria-label="Case studies">
+    <a class="pager-prev" href="../quality-improvement/index.html">
+      <span class="t-label">← Previous work</span>
+      <span class="pager-t">Quality Improvement Project</span>
+    </a>
+    <a class="pager-index" href="../index.html">All selected work</a>
+    <a class="pager-next" href="../investment-framework/index.html">
+      <span class="t-label">Next work →</span>
+      <span class="pager-t">Investment Framework &amp; Governance</span>
+    </a>
+  </nav>
+
+  <!-- ── Colophon ───────────────────────────────────────────── -->
+  <footer class="colophon" id="contact">
+    <div class="rule">
+      <span class="rule-mark">ARE<span class="sep">/</span>Contact<span class="sep">/</span>2026</span>
+    </div>
+    <p class="cl">Manufacturing, finance, and the systems <em>that connect them</em>.</p>
+    <div class="cta-row">
+      <a class="btn btn--tertiary" href="mailto:ariarzk@gmail.com">ariarzk@gmail.com<span class="arw">→</span></a>
+    </div>
+    <div class="colophon-meta">
+      <span class="t-meta">Aria Rizki Ermawan · Portfolio</span>
+      <span class="t-meta">Built on the EMW design system · Rev 02</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

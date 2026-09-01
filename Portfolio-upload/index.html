@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!--
+  ARIA RIZKI ERMAWAN — portfolio, page 1 of 3 (Profile).
+  Built on the EMW design system (Rev 02).
+
+  No build step. Open index.html directly, or drop the folder on any
+  static host. Every page shares four files:
+    emw/tokens.css     — token layer, copied verbatim from the EMW ds-bundle
+    emw/ds-bundle.css  — base, type scale and component CSS, verbatim
+    emw/portfolio.css  — connective tissue for this site
+    emw/portfolio.js   — theme toggle and the editorial reveal
+  To take a design-system update, re-copy the first two from
+  "EMW Capital/Brand/ds-bundle". Nothing in them is patched here.
+
+  The token layer resolves off data-theme on <html>. Remove that
+  attribute and the page renders unstyled.
+
+  STRUCTURE
+    index.html                 page 1 — Profile: who, what, track record,
+                               then the handover to the work
+    work/index.html            page 2 — Work: the Terminal featured, then the
+                               three engagements behind it
+    contact/index.html         page 3 — Contact
+    work/<slug>/index.html     one dedicated case study each
+
+  The masthead is the same on every page: Profile · Work · theme · Contact.
+  Its markup is duplicated per page (no build step) — change one, change all.
+
+  A chronological page: thank you, education, work experience, then two
+  ways onward. Content comes from the CV ("CV - Aria R Ermawan.pdf") and
+  the published thesis record on Garuda. Nothing here is invented; keep it
+  that way when editing.
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aria Rizki Ermawan — Manufacturing · Capital · Governance</title>
+<meta name="description" content="Aria Rizki Ermawan — the context behind the CV: education at Institut Teknologi Bandung, and a path from ecosystem expansion and credit analysis to corporate finance and running a manufacturing operation.">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./emw/tokens.css">
+<link rel="stylesheet" href="./emw/ds-bundle.css">
+<link rel="stylesheet" href="./emw/portfolio.css">
+<script>
+  // Resolve the stored theme before first paint.
+  try {
+    var t = localStorage.getItem('emw-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+<script src="./emw/portfolio.js" defer></script>
+</head>
+<body>
+
+<!-- ── Masthead bar ─────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="shell topbar-in">
+    <div class="topbar-brand">
+      <span class="topbar-wordmark"><span class="wm-full">Aria Rizki Ermawan</span><span class="wm-short">ARE</span></span>
+      <span class="topbar-sub">MFG · Capital · Governance</span>
+    </div>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="./index.html" aria-current="page">Profile</a>
+        <a href="./work/index.html">Work</a>
+        <a href="./skills/index.html">How I think</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle aria-label="Switch theme" title="Theme">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"></circle>
+          <path d="M8 1 A7 7 0 0 0 8 15 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+      <a class="nav-cta" href="./contact/index.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-top">
+      <p class="t-label">Profile · 2026</p>
+    </div>
+
+    <h1 class="t-display">Aria Rizki<br>Ermawan<span class="brass">.</span></h1>
+
+    <div class="case-meta case-meta--3">
+      <div>
+        <p class="t-label meta-k">Role</p>
+        <p class="meta-v">VP Manufacture</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Organisation</p>
+        <p class="meta-v">PT Toyamilindo</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Since</p>
+        <p class="meta-v">October 2023</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 01 · Thank you ─────────────────────────────────────── -->
+  <section class="section reveal" id="thanks">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">ARE<span class="sep">/</span>01<span class="sep">/</span>Thank you</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">01</span>
+          <h2 class="t-h1">Thank you for visiting</h2>
+        </div>
+        <p class="t-lead">
+          First of all, thank you for taking the time to visit this page.
+        </p>
+      </div>
+    </header>
+
+    <div class="prose">
+      <p class="t-body">
+        This portfolio is dedicated to giving you a snapshot of who I am and
+        the journey that has shaped me in a professional context.
+      </p>
+      <p class="t-body">
+        Beyond titles and work experience, I believe the way we approach our
+        work is shaped by the experiences, people, and environments that came
+        before it. This page provides some of that context.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 02 · Education ─────────────────────────────────────── -->
+  <section class="section reveal" id="education">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">ARE<span class="sep">/</span>02<span class="sep">/</span>Education</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">02</span>
+          <h2 class="t-h1">Education</h2>
+        </div>
+        <p class="t-lead">
+          Institut Teknologi Bandung, 2015 — 2018. Management, with a
+          concentration in operations and finance.
+        </p>
+      </div>
+    </header>
+
+    <div class="case-meta">
+      <div>
+        <p class="t-label meta-k">Institution</p>
+        <p class="meta-v">Institut Teknologi Bandung</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Period</p>
+        <p class="meta-v">2015 — 2018</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Degree</p>
+        <p class="meta-v">Bachelor of Management</p>
+      </div>
+      <div>
+        <p class="t-label meta-k">Concentration</p>
+        <p class="meta-v">Operations &amp; Finance</p>
+      </div>
+    </div>
+
+    <div class="prose prose--after-meta">
+      <p class="t-body">
+        I spent three and a half years studying management at Institut
+        Teknologi Bandung, with a concentration in operations and finance. My
+        academic interests were drawn toward the intersection between how a
+        business operates and how decisions can be evaluated economically.
+      </p>
+    </div>
+
+    <div class="term-panel entry">
+      <p class="t-label">Undergraduate thesis</p>
+      <h3 class="t-h3 entry-title">Performance Assessment of the Self-Service Queuing System — Pertamina Gas Station, Dago Bandung</h3>
+      <p class="t-small entry-body">
+        It measured whether a self-service refuelling system solved the queue it was installed to solve. The bottleneck turned out to sit in the first phase of the process, and the system still performed better overall than the conventional one. An early example of what still interests me: whether a change to how a business operates does what it was meant to do.
+      </p>
+      <div class="entry-foot">
+        <span class="t-meta">Journal of Business and Management · Vol 7, No 3 · 2018</span>
+        <a class="btn btn--tertiary" href="https://garuda.kemdiktisaintek.go.id/documents/detail/1529524" target="_blank" rel="noopener">View publication<span class="arw">↗</span></a>
+      </div>
+    </div>
+
+    <div class="entry-group">
+      <p class="t-label section-sub">Beyond the classroom</p>
+      <p class="t-body prose">
+        During college I also had opportunities to lead teams and to see
+        organisational and business execution up close.
+      </p>
+
+      <div class="grid g-2 entry-pair">
+        <div class="term-panel">
+          <p class="t-label">Student governance</p>
+          <h3 class="t-h3 entry-title">Head of Senator Team</h3>
+          <p class="t-meta entry-org">Keluarga Mahasiswa Manajemen — ITB</p>
+          <ul class="case-outcomes">
+            <li>Led and managed the senator team.</li>
+            <li>Discussed and analysed current organisational issues within KMM ITB.</li>
+            <li>Gathered members&rsquo; aspirations and supported their delivery to the wider student organisation.</li>
+          </ul>
+        </div>
+
+        <div class="term-panel">
+          <p class="t-label">Business project</p>
+          <h3 class="t-h3 entry-title">Chief Operating Officer</h3>
+          <p class="t-meta entry-org">SBM ITB Business Project · team of 25</p>
+          <ul class="case-outcomes">
+            <li>Built the business operating system.</li>
+            <li>Coordinated strategic planning across functions.</li>
+            <li>Managed and monitored KPIs, and supported execution.</li>
+          </ul>
+          <div class="entry-metrics">
+            <div class="metric">
+              <p class="metric-v">2.5×</p>
+              <p class="t-label metric-l">Return on investment</p>
+            </div>
+            <div class="metric">
+              <p class="metric-v metric-v--range">Best in class</p>
+              <p class="t-label metric-l">Company operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 03 · Work experience ───────────────────────────────── -->
+  <section class="section reveal" id="experience">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">ARE<span class="sep">/</span>03<span class="sep">/</span>Work experience</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">03</span>
+          <h2 class="t-h1">Work experience</h2>
+        </div>
+        <p class="t-lead">
+          The professional journey that followed gradually expanded the
+          perspective — from exploring business opportunities, to analysing
+          businesses through financial and commercial lenses, to making
+          investment decisions, and eventually becoming responsible for
+          operating one.
+        </p>
+      </div>
+    </header>
+
+    <ol class="tl career">
+      <li>
+        <time>2019</time>
+        <strong>Ecosystem Expansion Intern · GoPay</strong>
+        <p>Merchant acquisition and offline user acquisition during the early growth of the payments ecosystem.</p>
+      </li>
+      <li>
+        <time>2020 — 2022</time>
+        <strong>Commercial Credit Analyst · Bank BJB</strong>
+        <p>Understanding businesses through financial performance, commercial fundamentals, creditworthiness and risk.</p>
+      </li>
+      <li>
+        <time>2022 — 2023</time>
+        <strong>Corporate Development &amp; Finance · PT Toyamilindo</strong>
+        <p>Strategic decision-making, investment evaluation and capital allocation.</p>
+      </li>
+      <li data-now>
+        <time>2023 — Present</time>
+        <strong>VP Manufacture · PT Toyamilindo</strong>
+        <p>The perspective shifted — from evaluating businesses and investments to becoming directly responsible for operating and improving one.</p>
+      </li>
+    </ol>
+
+    <div class="term-panel entry scope">
+      <p class="t-label">Current scope</p>
+      <ul class="case-outcomes scope-list">
+        <li>Manufacturing operations</li>
+        <li>P&amp;L ownership</li>
+        <li>Quality</li>
+        <li>Capital investment</li>
+        <li>Performance management</li>
+        <li>Strategy</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── 04 · Where to next ─────────────────────────────────── -->
+  <section class="section reveal" id="next">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">ARE<span class="sep">/</span>04<span class="sep">/</span>Where to next</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">04</span>
+          <h2 class="t-h1">Where to next?</h2>
+        </div>
+        <p class="t-lead">
+          The experiences above provide the context for the journey so far.
+          From here you can explore either the work that came out of them, or
+          the knowledge and disciplines that shape how I approach problems.
+        </p>
+      </div>
+    </header>
+
+    <div class="navpanel navpanel--2">
+      <a class="nav-tile" href="./work/index.html">
+        <span class="nt-ref">Selected work</span>
+        <span class="nt-name">What I have built</span>
+        <span class="nt-scope">Four case studies: the decisions, the problems and what changed.</span>
+        <span class="nt-state"><span class="t-meta">Four engagements</span><span class="t-meta">Open →</span></span>
+      </a>
+      <a class="nav-tile" href="./skills/index.html">
+        <span class="nt-ref">How I think</span>
+        <span class="nt-name">Knowledge map</span>
+        <span class="nt-scope">The disciplines, knowledge and connections that shape how I approach problems and decisions.</span>
+        <span class="nt-state"><span class="t-meta">Knowledge graph</span><span class="t-meta">Open →</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Colophon ───────────────────────────────────────────── -->
+  <footer class="colophon" id="contact">
+    <div class="rule">
+      <span class="rule-mark">ARE<span class="sep">/</span>Contact<span class="sep">/</span>2026</span>
+    </div>
+    <p class="mk">ARE</p>
+    <p class="cl">Manufacturing, finance, and the systems <em>that connect them</em>.</p>
+    <div class="cta-row">
+      <a class="btn btn--tertiary" href="mailto:ariarzk@gmail.com">ariarzk@gmail.com<span class="arw">→</span></a>
+      <a class="btn btn--tertiary" href="https://www.linkedin.com/in/ariarzk/" target="_blank" rel="noopener">LinkedIn<span class="arw">↗</span></a>
+    </div>
+    <div class="colophon-meta">
+      <span class="t-meta">Aria Rizki Ermawan · Portfolio</span>
+      <span class="t-meta">Built on the EMW design system · Rev 02</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

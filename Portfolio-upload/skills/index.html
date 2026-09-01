@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--
+  SKILLS & CAPABILITIES — the knowledge graph.
+
+  The map is data-driven and meant to evolve:
+    skills/graph-data.js   nodes, clusters, syntheses, edges, layout
+    skills/graph.js        renderer, interactions, mobile index
+  Add a node or a relationship in graph-data.js and both the graph and
+  the small-screen index pick it up. Nothing about the map is hard-coded
+  in this page.
+
+  Below 900px the graph is replaced by an expandable index built from
+  the same model — same hierarchy, no giant canvas to fight.
+-->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How I Think — Aria Rizki Ermawan</title>
+<meta name="description" content="How I think — a map of connected knowledge — strategy, finance, operations, capital allocation, quality, performance, data and governance — synthesised into business systems thinking.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../emw/tokens.css">
+<link rel="stylesheet" href="../emw/ds-bundle.css">
+<link rel="stylesheet" href="../emw/portfolio.css">
+<script>
+  // Resolve the stored theme before first paint.
+  try {
+    var t = localStorage.getItem('emw-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+<script src="../emw/portfolio.js" defer></script>
+<script src="./graph-data.js" defer></script>
+<script src="./graph.js" defer></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="shell topbar-in">
+    <div class="topbar-brand">
+      <a class="topbar-wordmark" href="../index.html"><span class="wm-full">Aria Rizki Ermawan</span><span class="wm-short">ARE</span></a>
+      <span class="topbar-sub">How I think</span>
+    </div>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="../index.html">Profile</a>
+        <a href="../work/index.html">Work</a>
+        <a href="./index.html" aria-current="page">How I think</a>
+      </nav>
+      <button type="button" class="theme-btn" data-theme-toggle aria-label="Switch theme" title="Theme">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"></circle>
+          <path d="M8 1 A7 7 0 0 0 8 15 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+      <a class="nav-cta" href="../contact/index.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+
+  <header class="case-hero">
+    <div class="rule">
+      <span class="rule-mark">ARE<span class="sep">/</span>How I think<span class="sep">/</span>Knowledge map</span>
+    </div>
+
+    <h1 class="t-h1">How I Think</h1>
+    <p class="hero-thesis">My capabilities sit at the intersection of business management, manufacturing operations, <em>capital allocation</em>, and management systems.</p>
+
+    <div class="sh-grid work-intro">
+      <p class="t-body">
+        Knowledge compounds when disciplines connect. This map represents the
+        systems of knowledge that shape how I think, make decisions, and build.
+      </p>
+      <p class="t-caption">
+        Knowledge → connection → synthesis → capability → systems.
+      </p>
+    </div>
+  </header>
+
+  <section class="section reveal" id="map">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">KG<span class="sep">/</span>01<span class="sep">/</span>The map</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">KG-01</span>
+          <h2 class="t-h1">Knowledge map</h2>
+        </div>
+        <p class="t-lead">
+          Nine clusters of working knowledge, the relationships between them, and what those relationships produce.
+          Select any node to see what it connects to.
+        </p>
+      </div>
+    </header>
+
+    <div class="kg-stage">
+      <div class="kg-frame" id="graph"></div>
+
+      <aside class="kg-panel" id="kg-panel" aria-live="polite">
+        <p class="t-label kg-panel-kind">How to read it</p>
+        <h3 class="t-h3 kg-panel-title">Nodes and relationships</h3>
+        <p class="t-small kg-panel-desc">
+          Hover, tap or tab to a node to trace what it connects to. Select it
+          to hold the view; select it again, press Escape, or use Reset to
+          release. Shared nodes — variance analysis, root cause,
+          accountability — sit in one cluster but answer to several.
+        </p>
+        <p class="t-label kg-panel-sub">Bands</p>
+        <div class="kg-chips">
+          <span class="kg-chip is-static">Synthesis · how I think</span>
+          <span class="kg-chip is-static">Knowledge · what I know</span>
+          <span class="kg-chip is-static">Artefact · what it built</span>
+        </div>
+      </aside>
+    </div>
+
+    <!-- small screens: the same model, as an index -->
+    <div class="kg-list" id="kg-list"></div>
+
+    <div class="kg-legend">
+      <span class="kg-key kg-key--skill"><i></i>Skill</span>
+      <span class="kg-key kg-key--cluster"><i></i>Cluster</span>
+      <span class="kg-key kg-key--synthesis"><i></i>Synthesis</span>
+      <span class="kg-key kg-key--artifact"><i></i>Artefact</span>
+      <span class="kg-tools">
+        <span class="kg-hint" id="kg-count"></span>
+        <button type="button" class="filter" id="kg-reset">Reset view</button>
+      </span>
+    </div>
+  </section>
+
+  <section class="section reveal" id="synthesis">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">KG<span class="sep">/</span>02<span class="sep">/</span>Synthesis</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">KG-02</span>
+          <h2 class="t-h1">Synthesis</h2>
+        </div>
+        <p class="t-lead">
+          These capabilities do not exist independently. Their value comes from
+          the connections between them.
+        </p>
+      </div>
+    </header>
+
+    <div class="grid g-2 record-notes">
+      <div class="term-panel">
+        <p class="t-label">What each part does</p>
+        <ul class="case-outcomes">
+          <li><strong>Strategy</strong> shapes direction.</li>
+          <li><strong>Finance</strong> measures economics.</li>
+          <li><strong>Operations</strong> executes.</li>
+          <li><strong>Quality</strong> improves the system.</li>
+          <li><strong>Data</strong> makes performance visible.</li>
+          <li><strong>Governance</strong> creates accountability.</li>
+          <li><strong>Decision intelligence</strong> connects information to action.</li>
+          <li><strong>Digital systems</strong> make the model scalable.</li>
+        </ul>
+      </div>
+      <div class="term-panel">
+        <p class="t-label">What they add up to</p>
+        <p class="t-body">
+          Business systems thinking means treating those as one system rather than eight functions: a capital allocation decision is also a cost-structure decision, a capacity decision and a governance decision.
+        </p>
+        <p class="t-body">
+          The three syntheses on the map — decision intelligence, digital
+          transformation, and business systems thinking above them — are not
+          extra skills. They are what the connections produce.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="artefact">
+    <header class="section-head">
+      <div class="rule">
+        <span class="rule-mark">KG<span class="sep">/</span>03<span class="sep">/</span>Artefact</span>
+      </div>
+      <div class="sh-grid">
+        <div>
+          <span class="sh-num">KG-03</span>
+          <h2 class="t-h1">Manufacture Terminal</h2>
+        </div>
+        <p class="t-lead">
+          A management system built from these capabilities, running in a plant.
+        </p>
+      </div>
+    </header>
+
+    <div class="feature-grid">
+      <div>
+        <p class="hero-thesis feature-thesis">Manufacture Terminal is <em>one expression</em> of that synthesis.</p>
+        <p class="t-body feature-lead">
+          Ten analytics modules across six domains, a control tower that reads
+          across them, and an executive publication generated rather than
+          written — performance, financial, quality, procurement, forecasting
+          and decision intelligence in one operating surface.
+        </p>
+      </div>
+      <div class="feature-side">
+        <div class="feature-metrics">
+          <div class="metric">
+            <p class="metric-v">10</p>
+            <p class="t-label metric-l">Live modules</p>
+          </div>
+          <div class="metric">
+            <p class="metric-v">6</p>
+            <p class="t-label metric-l">Domains</p>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="../work/manufacture-terminal/index.html">Read the case study<span class="arw">→</span></a>
+          <a class="btn btn--tertiary" href="https://manufactureterminal.com/" target="_blank" rel="noopener">Live system<span class="arw">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Portfolio">
+    <a class="pager-prev" href="../index.html">
+      <span class="t-label">← Back</span>
+      <span class="pager-t">Profile</span>
+    </a>
+    <a class="pager-index" href="../contact/index.html">Get in touch</a>
+    <a class="pager-next" href="../work/index.html">
+      <span class="t-label">The evidence →</span>
+      <span class="pager-t">Selected Work</span>
+    </a>
+  </nav>
+
+  <footer class="colophon" id="contact">
+    <div class="rule">
+      <span class="rule-mark">ARE<span class="sep">/</span>Contact<span class="sep">/</span>2026</span>
+    </div>
+    <p class="cl">Manufacturing, finance, and the systems <em>that connect them</em>.</p>
+    <div class="cta-row">
+      <a class="btn btn--tertiary" href="mailto:ariarzk@gmail.com">ariarzk@gmail.com<span class="arw">→</span></a>
+      <a class="btn btn--tertiary" href="https://www.linkedin.com/in/ariarzk/" target="_blank" rel="noopener">LinkedIn<span class="arw">↗</span></a>
+    </div>
+    <div class="colophon-meta">
+      <span class="t-meta">Aria Rizki Ermawan · Portfolio</span>
+      <span class="t-meta">Built on the EMW design system · Rev 02</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
