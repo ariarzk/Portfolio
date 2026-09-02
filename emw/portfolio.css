@@ -642,3 +642,21 @@ a.topbar-wordmark:hover{color:var(--accent-ink)}
   .navpanel--2{grid-template-columns:minmax(0,1fr)}
   .entry-foot .btn{margin-left:0}
 }
+
+/* ── Profile: tighter rhythm, note set as one column ──────── */
+.hero--profile{padding:var(--space-6) 0 var(--space-5)}
+.section--tight{padding-top:var(--space-7)}
+.section--tight .section-head{margin-bottom:var(--space-5)}
+.sh-grid--note{align-items:start}
+.section--note .section-head{margin-bottom:0}
+.note>*+*{margin-top:var(--space-4)}
+.note .t-body{max-width:52ch}
+.entry-group{margin-top:var(--space-6)}
+@media (max-width:1140px){
+  .note .t-body{max-width:60ch}
+}
+
+/* ── Footer: a contact line, not a brand statement ────────── */
+.colophon{margin-top:var(--space-7);padding:var(--space-6) 0 var(--space-6)}
+.colophon .cta-row{margin-top:var(--space-4)}
+.colophon .colophon-meta{margin-top:var(--space-6)}
