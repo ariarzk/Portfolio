@@ -50,13 +50,14 @@
   })();
 </script>
 <script src="../emw/portfolio.js" defer></script>
+<script src="../emw/page-transition.js" defer></script>
 <script src="./graph-data.js" defer></script>
 <script src="./graph.js" defer></script>
 </head>
 <body>
 
-<!-- Page transition. State is set by the head script before first paint;
-     emw/portfolio.js drives the animation and intercepts internal links. -->
+<!-- MOT-05, the design system's page transition. State is set by the head
+     script before first paint; emw/page-transition.js drives it. -->
 <div class="curtain" aria-hidden="true">
   <div class="curtain-cols">
     <span class="curtain-col" style="--i:0"></span>

@@ -662,55 +662,8 @@ a.topbar-wordmark:hover{color:var(--accent-ink)}
 .colophon .colophon-meta{margin-top:var(--space-6)}
 
 /* ============================================================
-   PAGE TRANSITION — the curtain
-   Columns wipe up over the page, hold, then continue up to
-   reveal the next one. State lives on <html data-curtain>:
-     (absent)  parked below the fold, invisible
-     closed    covering the viewport, label shown
-     opening   travelling up and off
-   The label text comes from --curtain-label so the head script
-   can set it before first paint, with no flash of old content.
+   PAGE TRANSITION
+   MOT-05 lives in the design system now — markup and CSS in
+   ds-bundle.css, behaviour in page-transition.js. Nothing to
+   add here; the destination names are in portfolio.js.
    ============================================================ */
-.curtain{
-  position:fixed;inset:0;z-index:900;
-  visibility:hidden;pointer-events:none;
-}
-html[data-curtain] .curtain{visibility:visible;pointer-events:auto}
-.curtain-cols{position:absolute;inset:0;display:flex}
-.curtain-col{
-  flex:1 1 0;background:var(--surface-base);
-  transform:translateY(100%);will-change:transform;
-  transition:transform 480ms var(--ease-emw);
-  transition-delay:calc(var(--i) * 50ms);
-}
-/* a hairline between columns, so the stagger reads even over empty ground */
-.curtain-col + .curtain-col{border-left:var(--border-hairline) solid var(--rule-hairline)}
-/* the curtain lifts in the opposite order to the way it fell */
-html[data-curtain="opening"] .curtain-col{transition-delay:calc((6 - var(--i)) * 50ms)}
-html[data-curtain="closed"] .curtain-col{transform:translateY(0)}
-html[data-curtain="opening"] .curtain-col{transform:translateY(-100%)}
-.curtain-label{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  gap:.06em;opacity:0;transition:opacity 300ms var(--ease-emw);
-}
-html[data-curtain="closed"] .curtain-label{opacity:1;transition-delay:200ms}
-.curtain-name{
-  font-family:var(--font-serif);font-weight:300;
-  font-size:clamp(30px,5.2vw,62px);line-height:1;letter-spacing:-.018em;
-  color:var(--ink-primary);
-}
-.curtain-name::before{content:var(--curtain-label,"")}
-.curtain-dot{
-  font-family:var(--font-serif);font-weight:300;
-  font-size:clamp(30px,5.2vw,62px);line-height:1;color:var(--accent);
-}
-/* no transitions until the first paint has happened */
-.curtain:not(.is-animated) .curtain-col,
-.curtain:not(.is-animated) .curtain-label{transition:none}
-
-@media (prefers-reduced-motion:reduce){
-  .curtain-cols{display:none}
-  .curtain{background:var(--surface-base);opacity:0}
-  html[data-curtain="closed"] .curtain{opacity:1}
-  html[data-curtain="opening"] .curtain{opacity:0}
-}

@@ -20,7 +20,7 @@
   production months are still accruing.
 
   Styling comes from the shared EMW stylesheets in /emw — nothing on this page
-  is page-specific CSS. Behaviour (theme, reveal) comes from /emw/portfolio.js.
+  is page-specific CSS. Behaviour comes from /emw/portfolio.js and /emw/page-transition.js.
 -->
 <html lang="en" data-theme="dark">
 <head>
@@ -60,11 +60,12 @@
   })();
 </script>
 <script src="../../emw/portfolio.js" defer></script>
+<script src="../../emw/page-transition.js" defer></script>
 </head>
 <body>
 
-<!-- Page transition. State is set by the head script before first paint;
-     emw/portfolio.js drives the animation and intercepts internal links. -->
+<!-- MOT-05, the design system's page transition. State is set by the head
+     script before first paint; emw/page-transition.js drives it. -->
 <div class="curtain" aria-hidden="true">
   <div class="curtain-cols">
     <span class="curtain-col" style="--i:0"></span>

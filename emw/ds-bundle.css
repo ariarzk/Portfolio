@@ -196,16 +196,25 @@ hr{border:0;border-top:var(--border-hairline) solid var(--rule-hairline);margin:
 .rail-link[aria-current="true"]{color:var(--ink-primary);border-left-color:var(--accent);font-weight:500}
 .rail-link[data-state="scheduled"]{opacity:.42;pointer-events:none}
 .rail-foot{padding:var(--space-3) var(--space-4) 0;border-top:var(--border-hairline) solid var(--rule-hairline)}
+/* The contrast mark. A half-filled disc: the filled side is the ink the
+   page is currently set in, so the control states the mode rather than
+   labelling it. Rotates 180deg on change — the one place a disc is allowed
+   to be round. */
 .theme-toggle{
-  display:flex;width:100%;border:var(--border-hairline) solid var(--rule-thin);
-  border-radius:var(--radius-sm);overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;padding:0;background:transparent;
+  border:0;border-radius:50%;color:var(--ink-tertiary);cursor:pointer;
+  transition:color var(--motion-fast) var(--ease-emw);
 }
-.theme-toggle button{
-  flex:1;padding:7px 0;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink-tertiary);
-  transition:background var(--motion-fast) var(--ease-emw),color var(--motion-fast) var(--ease-emw);
+.theme-toggle:hover{color:var(--ink-primary)}
+.theme-toggle svg{
+  width:18px;height:18px;display:block;
+  transition:transform var(--motion-standard) var(--ease-emw);
 }
-.theme-toggle button[aria-pressed="true"]{background:var(--ink-primary);color:var(--ink-inverse)}
+.theme-toggle circle{fill:none;stroke:currentColor;stroke-width:1.5}
+.theme-toggle .disc{fill:currentColor;stroke:none}
+[data-theme="dark"] .theme-toggle svg{transform:rotate(180deg)}
+@media (prefers-reduced-motion: reduce){.theme-toggle svg{transition:none}}
 .rail-stamp{margin-top:var(--space-3);font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;color:var(--ink-tertiary);line-height:1.7}
 
 .page{margin-left:var(--rail-w)}
@@ -830,3 +839,74 @@ hr{border:0;border-top:var(--border-hairline) solid var(--rule-hairline);margin:
 .proplegend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px var(--space-4);margin-top:var(--space-3)}
 .proplegend span{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;color:var(--ink-tertiary);display:flex;align-items:center;gap:8px}
 .proplegend b{width:9px;height:9px;display:block}
+
+/* ------------------------------------------------------------
+   MOT-05 — PAGE TRANSITION (THE CURTAIN)
+   The only motion in the system that owns the whole viewport.
+   Columns wipe up over the page, hold with the name of where
+   you are going, then continue up to uncover it. State lives on
+   the document element, so it can be set before first paint:
+     (absent)  parked below the fold, invisible
+     closed    covering the viewport, label shown
+     opening   travelling up and off
+   The label text comes from --curtain-label, which the page's
+   own head script sets, so there is no flash of the old name.
+   ------------------------------------------------------------ */
+.curtain{
+  position:fixed;inset:0;z-index:900;
+  visibility:hidden;pointer-events:none;
+  --curtain-cols:7;
+  --curtain-stagger:40ms;
+}
+html[data-curtain] .curtain{visibility:visible;pointer-events:auto}
+.curtain-cols{position:absolute;inset:0;display:flex}
+.curtain-col{
+  flex:1 1 0;background:var(--surface-base);
+  transform:translateY(100%);will-change:transform;
+  transition:transform var(--motion-deliberate) var(--ease-emw);
+  transition-delay:calc(var(--i) * var(--curtain-stagger));
+}
+/* a hairline between columns, so the stagger reads even over empty ground */
+.curtain-col + .curtain-col{border-left:var(--border-hairline) solid var(--rule-hairline)}
+html[data-curtain="closed"] .curtain-col{transform:translateY(0)}
+/* the curtain lifts in the opposite order to the way it fell */
+html[data-curtain="opening"] .curtain-col{
+  transform:translateY(-100%);
+  transition-delay:calc((var(--curtain-cols) - 1 - var(--i)) * var(--curtain-stagger));
+}
+.curtain-label{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  gap:.06em;opacity:0;transition:opacity var(--motion-standard) var(--ease-emw);
+}
+html[data-curtain="closed"] .curtain-label{opacity:1;transition-delay:200ms}
+.curtain-name,.curtain-dot{
+  font-family:var(--font-serif);font-weight:300;
+  font-size:clamp(30px,5.2vw,62px);line-height:1;letter-spacing:-.018em;
+}
+.curtain-name{color:var(--ink-primary)}
+.curtain-name::before{content:var(--curtain-label,"")}
+.curtain-dot{color:var(--accent)}
+/* nothing animates until after the first paint */
+.curtain:not(.is-animated) .curtain-col,
+.curtain:not(.is-animated) .curtain-label{transition:none}
+
+@media (prefers-reduced-motion:reduce){
+  .curtain-cols{display:none}
+  .curtain{background:var(--surface-base);opacity:0;transition:opacity var(--motion-fast) linear}
+  html[data-curtain="closed"] .curtain{opacity:1}
+  html[data-curtain="opening"] .curtain{opacity:0}
+}
+
+/* Demo frame — the same choreography inside a stage rather than
+   over the document. Specification only; not shipped. */
+.mcurtain{position:relative;height:120px;overflow:hidden;border:var(--border-hairline) solid var(--rule-hairline);background:var(--surface-sunken)}
+.mcurtain .mc-under{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-tertiary)}
+.mcurtain .mc-cols{position:absolute;inset:0;display:flex}
+.mcurtain .mc-col{flex:1 1 0;background:var(--surface-base);transform:translateY(100%)}
+.mcurtain .mc-col+.mc-col{border-left:var(--border-hairline) solid var(--rule-hairline)}
+.mcurtain .mc-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:.06em;font-family:var(--font-serif);font-weight:300;font-size:23px;letter-spacing:-.018em;color:var(--ink-primary);opacity:0}
+.mcurtain .mc-label i{color:var(--accent);font-style:normal}
+.run .mcurtain .mc-col{transform:translateY(0);transition:transform var(--motion-deliberate) var(--ease-emw);transition-delay:calc(var(--i)*40ms)}
+.run .mcurtain .mc-label{opacity:1;transition:opacity var(--motion-standard) var(--ease-emw) 200ms}
+.run.lift .mcurtain .mc-col{transform:translateY(-100%);transition-delay:calc((6 - var(--i))*40ms)}
+.run.lift .mcurtain .mc-label{opacity:0;transition:opacity var(--motion-standard) var(--ease-emw)}
