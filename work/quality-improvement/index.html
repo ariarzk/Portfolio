@@ -36,15 +36,47 @@
 <link rel="stylesheet" href="../../emw/ds-bundle.css">
 <link rel="stylesheet" href="../../emw/portfolio.css">
 <script>
-  // Resolve the stored theme before first paint.
-  try {
-    var t = localStorage.getItem('emw-theme');
-    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-  } catch (e) {}
+  // Theme and page-transition state, both resolved before first paint.
+  (function () {
+    var d = document.documentElement, page = 'Quality Improvement';
+    try {
+      var t = localStorage.getItem('emw-theme');
+      if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+    } catch (e) {}
+    try {
+      var closed = sessionStorage.getItem('curtain:closed');
+      var label = sessionStorage.getItem('curtain:label');
+      var seen = sessionStorage.getItem('curtain:seen');
+      sessionStorage.removeItem('curtain:closed');
+      sessionStorage.removeItem('curtain:label');
+      sessionStorage.setItem('curtain:seen', '1');
+      if (closed || !seen) {
+        d.setAttribute('data-curtain', 'closed');
+        // a first visit is a loading screen, and holds longer than a page change
+        if (!closed) d.setAttribute('data-curtain-intro', '');
+        d.style.setProperty('--curtain-label', JSON.stringify(closed && label ? label : page));
+      }
+    } catch (e) {}
+  })();
 </script>
 <script src="../../emw/portfolio.js" defer></script>
 </head>
 <body>
+
+<!-- Page transition. State is set by the head script before first paint;
+     emw/portfolio.js drives the animation and intercepts internal links. -->
+<div class="curtain" aria-hidden="true">
+  <div class="curtain-cols">
+    <span class="curtain-col" style="--i:0"></span>
+    <span class="curtain-col" style="--i:1"></span>
+    <span class="curtain-col" style="--i:2"></span>
+    <span class="curtain-col" style="--i:3"></span>
+    <span class="curtain-col" style="--i:4"></span>
+    <span class="curtain-col" style="--i:5"></span>
+    <span class="curtain-col" style="--i:6"></span>
+  </div>
+  <p class="curtain-label"><span class="curtain-name"></span><span class="curtain-dot">.</span></p>
+</div>
 
 <div class="topbar">
   <div class="shell topbar-in">

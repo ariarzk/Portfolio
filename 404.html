@@ -24,6 +24,13 @@
       var t = localStorage.getItem('emw-theme');
       if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
     } catch (e) {}
+    // This page carries no transition script, so drop any curtain state the
+    // previous page left behind rather than mislabelling the next one.
+    try {
+      sessionStorage.removeItem('curtain:closed');
+      sessionStorage.removeItem('curtain:label');
+      sessionStorage.setItem('curtain:seen', '1');
+    } catch (e) {}
     // stylesheets are written with the resolved base, before first paint
     document.write(['tokens', 'ds-bundle', 'portfolio'].map(function (f) {
       return '<link rel="stylesheet" href="' + base + '/emw/' + f + '.css">';
